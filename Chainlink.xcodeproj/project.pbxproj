@@ -1,0 +1,279 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */; };
+		9AA6BFAD1C025FAB000F42F4 /* Chainlink-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */; };
+		9AA6BFAF1C025FAB000F42F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */; };
+		9AA6BFB21C025FAB000F42F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9AA6BFA71C025FAB000F42F4 /* Chainlink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chainlink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chainlink-Prefix.pch"; sourceTree = "<group>"; };
+		9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AA6BFB11C025FAB000F42F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AA6BFB31C025FAB000F42F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9AA6BFA41C025FAB000F42F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9AA6BF9E1C025FAA000F42F4 = {
+			isa = PBXGroup;
+			children = (
+				9AA6BFA91C025FAB000F42F4 /* Chainlink */,
+				9AA6BFA81C025FAB000F42F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9AA6BFA81C025FAB000F42F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6BFA71C025FAB000F42F4 /* Chainlink.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AA6BFA91C025FAB000F42F4 /* Chainlink */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */,
+				9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */,
+				9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */,
+				9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */,
+				9AA6BFB31C025FAB000F42F4 /* Info.plist */,
+			);
+			path = Chainlink;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9AA6BFA61C025FAB000F42F4 /* Chainlink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AA6BFB61C025FAB000F42F4 /* Build configuration list for PBXNativeTarget "Chainlink" */;
+			buildPhases = (
+				9AA6BFA31C025FAB000F42F4 /* Sources */,
+				9AA6BFA41C025FAB000F42F4 /* Frameworks */,
+				9AA6BFA51C025FAB000F42F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chainlink;
+			productName = Chainlink;
+			productReference = 9AA6BFA71C025FAB000F42F4 /* Chainlink.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9AA6BF9F1C025FAA000F42F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Ted Kalaw";
+				TargetAttributes = {
+					9AA6BFA61C025FAB000F42F4 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 9AA6BFA21C025FAB000F42F4 /* Build configuration list for PBXProject "Chainlink" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9AA6BF9E1C025FAA000F42F4;
+			productRefGroup = 9AA6BFA81C025FAB000F42F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9AA6BFA61C025FAB000F42F4 /* Chainlink */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9AA6BFA51C025FAB000F42F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AA6BFB21C025FAB000F42F4 /* LaunchScreen.storyboard in Resources */,
+				9AA6BFAF1C025FAB000F42F4 /* Assets.xcassets in Resources */,
+				9AA6BFAD1C025FAB000F42F4 /* Chainlink-Prefix.pch in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9AA6BFA31C025FAB000F42F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AA6BFB11C025FAB000F42F4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9AA6BFB41C025FAB000F42F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9AA6BFB51C025FAB000F42F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9AA6BFB71C025FAB000F42F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Chainlink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TK.Chainlink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9AA6BFB81C025FAB000F42F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Chainlink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TK.Chainlink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9AA6BFA21C025FAB000F42F4 /* Build configuration list for PBXProject "Chainlink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA6BFB41C025FAB000F42F4 /* Debug */,
+				9AA6BFB51C025FAB000F42F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AA6BFB61C025FAB000F42F4 /* Build configuration list for PBXNativeTarget "Chainlink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA6BFB71C025FAB000F42F4 /* Debug */,
+				9AA6BFB81C025FAB000F42F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9AA6BF9F1C025FAA000F42F4 /* Project object */;
+}

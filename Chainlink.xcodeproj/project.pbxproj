@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E2BC1C0268E7004AB17C /* RootViewController.swift */; };
+		9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E2BE1C0283AD004AB17C /* InitialView.swift */; };
 		9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */; };
 		9AA6BFAD1C025FAB000F42F4 /* Chainlink-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */; };
 		9AA6BFAF1C025FAB000F42F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A23E2BC1C0268E7004AB17C /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		9A23E2BE1C0283AD004AB17C /* InitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		9AA6BFA71C025FAB000F42F4 /* Chainlink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chainlink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chainlink-Prefix.pch"; sourceTree = "<group>"; };
@@ -53,10 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */,
+				9A23E2BC1C0268E7004AB17C /* RootViewController.swift */,
 				9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */,
 				9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */,
 				9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */,
 				9AA6BFB31C025FAB000F42F4 /* Info.plist */,
+				9A23E2BE1C0283AD004AB17C /* InitialView.swift */,
 			);
 			path = Chainlink;
 			sourceTree = "<group>";
@@ -132,6 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,
+				9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */,
 				9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +280,7 @@
 				9AA6BFB81C025FAB000F42F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

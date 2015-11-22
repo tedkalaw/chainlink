@@ -18,9 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
     self.window?.makeKeyAndVisible()
-    self.window?.rootViewController = UIViewController(nibName: nil, bundle: nil)
-    self.window?.rootViewController?.view = UIView(frame: (self.window?.frame)!)
-    self.window?.rootViewController?.view.backgroundColor = UIColor.redColor()
+
+    self.window?.rootViewController = RootViewController()
     return true
   }
 

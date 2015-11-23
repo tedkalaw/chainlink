@@ -41,10 +41,6 @@ class InitialView: UIView {
     self.addSubview(settingsButton)
   }
 
-  required init?(coder aDecoder: NSCoder) {
-      fatalError("idc about nscoding")
-  }
-
   override func layoutSubviews() {
     self.titleLabel.frame = CGRectMake(0, 50, self.bounds.width, 25)
 
@@ -52,4 +48,10 @@ class InitialView: UIView {
 
     self.settingsButton.frame = CGRectMake(self.bounds.width / 4, 300 + 20, self.bounds.width / 2, 50)
   }
+
+  // IDGAF
+  required init?(coder aDecoder: NSCoder) {
+      fatalError("idc about nscoding")
+  }
+
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: UIViewController, InitialViewDelegate {
 
   var rootView: InitialView?
   var titleLabel: UILabel?
@@ -20,11 +20,19 @@ class RootViewController: UIViewController {
 
     self.view.addSubview(newRootView)
     self.rootView = newRootView
+    self.rootView?.delegate = self
+    self.navigationController?.navigationBarHidden = true
   }
 
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
 
     self.rootView?.frame = self.view.bounds
+  }
+
+  func handleGoButtonPress() {
+    let chainViewController = ChainViewController()
+    self.navigationController?.pushViewController(chainViewController, animated: true)
+    NSLog("button tapped from view controller");
   }
 }

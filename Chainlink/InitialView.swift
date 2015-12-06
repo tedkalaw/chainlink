@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol InitialViewDelegate {
+  func handleGoButtonPress();
+}
+
 class InitialView: UIView {
 
   var titleLabel: UILabel
   var goButton: UIButton
   var settingsButton: UIButton
+  var delegate: InitialViewDelegate?
 
   required override init(frame: CGRect) {
     let titleLabel:UILabel = UILabel()
@@ -39,6 +44,8 @@ class InitialView: UIView {
     self.addSubview(titleLabel)
     self.addSubview(goButton)
     self.addSubview(settingsButton)
+
+    self.goButton.addTarget(self, action: "testFunc:", forControlEvents: UIControlEvents.TouchUpInside)
   }
 
   override func layoutSubviews() {
@@ -52,6 +59,10 @@ class InitialView: UIView {
   // IDGAF
   required init?(coder aDecoder: NSCoder) {
       fatalError("idc about nscoding")
+  }
+
+  func testFunc(sender:UIButton!) {
+    self.delegate?.handleGoButtonPress()
   }
 
 }

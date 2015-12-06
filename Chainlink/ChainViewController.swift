@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ChainViewController:UIViewController {
+class ChainViewController:UIViewController,
+  ChainViewDelegate {
 
   var chainView: ChainView?
 
@@ -26,6 +27,12 @@ class ChainViewController:UIViewController {
     super.viewWillLayoutSubviews()
 
     self.chainView?.frame = self.view.bounds
+    self.chainView?.frame = CGRectMake(
+      self.view.bounds.origin.x,
+      self.view.bounds.origin.y + 60,
+      self.view.bounds.size.width,
+      self.view.bounds.size.height
+    )
   }
 
   override func viewWillDisappear(animated: Bool) {

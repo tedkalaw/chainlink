@@ -33,6 +33,5 @@ class RootViewController: UIViewController, InitialViewDelegate {
   func handleGoButtonPress() {
     let chainViewController = ChainViewController()
     self.navigationController?.pushViewController(chainViewController, animated: true)
-    NSLog("button tapped from view controller");
   }
 }

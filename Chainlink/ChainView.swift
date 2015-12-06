@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ChainViewDelegate {
+
+}
+
 class ChainView: UIView {
   var testLabel: UILabel
 
@@ -18,7 +22,12 @@ class ChainView: UIView {
     self.testLabel = testLabel
 
     super.init(frame:frame)
-    self.backgroundColor = UIColor.redColor()
+    self.backgroundColor = UIColor.whiteColor()
+    self.addSubview(self.testLabel);
+  }
+
+  override func layoutSubviews() {
+    self.testLabel.frame = CGRectMake(0, 0, self.bounds.width, 25)
   }
 
   required init?(coder aDecoder: NSCoder) {

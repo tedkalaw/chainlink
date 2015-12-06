@@ -12,26 +12,12 @@ protocol ChainViewDelegate {
 
 }
 
-class ChainView: UIView {
-  var testLabel: UILabel
-
-  required override init(frame:CGRect) {
-    let testLabel:UILabel = UILabel()
-    testLabel.text = "Chainlink"
-    testLabel.textAlignment = NSTextAlignment.Center
-    self.testLabel = testLabel
-
-    super.init(frame:frame)
-    self.backgroundColor = UIColor.whiteColor()
-    self.addSubview(self.testLabel);
-  }
-
-  override func layoutSubviews() {
-    self.testLabel.frame = CGRectMake(0, 0, self.bounds.width, 25)
-  }
-
+class ChainView: UITableView {
   required init?(coder aDecoder: NSCoder) {
-      fatalError("idc about nscoding")
+    super.init(coder: aDecoder)
   }
 
+  required override init(frame: CGRect, style: UITableViewStyle) {
+    super.init(frame: frame, style: style)
+  }
 }

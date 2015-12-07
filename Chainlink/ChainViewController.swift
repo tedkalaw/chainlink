@@ -31,18 +31,7 @@ class ChainViewController:UIViewController,
       return
     }
 
-    let dateFormatter = NSDateFormatter()
-    let locale = NSLocale(localeIdentifier: "en_US_POSIX")
-
-    dateFormatter.locale = locale
-    dateFormatter.dateFormat = "MM-dd-yyyy"
-
-    self.links = [
-      LinkModel(date: dateFormatter.dateFromString("12-05-2015")!),
-      LinkModel(date: dateFormatter.dateFromString("12-04-2015")!),
-      LinkModel(date: dateFormatter.dateFromString("12-03-2015")!),
-      LinkModel(date: dateFormatter.dateFromString("12-02-2015")!)
-    ]
+    self.links = self.getLinks()
   }
 
   override func viewWillLayoutSubviews() {
@@ -71,4 +60,21 @@ class ChainViewController:UIViewController,
   override func viewWillDisappear(animated: Bool) {
     self.navigationController?.navigationBarHidden = true
   }
+
+  // TODO: Fetch from disk
+  func getLinks() -> [LinkModel] {
+    let dateFormatter = NSDateFormatter()
+    let locale = NSLocale(localeIdentifier: "en_US_POSIX")
+
+    dateFormatter.locale = locale
+    dateFormatter.dateFormat = "MM-dd-yyyy"
+
+    return [
+      LinkModel(date: dateFormatter.dateFromString("12-05-2015")!),
+      LinkModel(date: dateFormatter.dateFromString("12-04-2015")!),
+      LinkModel(date: dateFormatter.dateFromString("12-03-2015")!),
+      LinkModel(date: dateFormatter.dateFromString("12-02-2015")!)
+    ];
+  }
+
 }

@@ -13,6 +13,7 @@ class ChainViewController:UIViewController,
   UITableViewDelegate,
   ChainViewDelegate {
 
+  var chain: [ChainModel]?
   var chainView: ChainView?
   var links: [LinkModel]?
   var addButton: UIBarButtonItem?
@@ -90,5 +91,4 @@ class ChainViewController:UIViewController,
       LinkModel(date: dateFormatter.dateFromString("12-02-2015")!)
     ];
   }
-
 }

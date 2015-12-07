@@ -15,6 +15,7 @@ class ChainViewController:UIViewController,
 
   var chainView: ChainView?
   var links: [LinkModel]?
+  var addButton: UIBarButtonItem?
 
   override func viewDidLoad() {
     super.viewDidLoad();
@@ -27,11 +28,25 @@ class ChainViewController:UIViewController,
     self.title = "Chain"
     self.navigationController?.navigationBarHidden = false
 
+    let addButton = UIBarButtonItem(
+      title: "Add",
+      style: .Plain,
+      target: self,
+      action: "addLink"
+    )
+
+    self.navigationItem.rightBarButtonItem = addButton
+    self.addButton = addButton
+
     if (self.links != nil) {
       return
     }
 
     self.links = self.getLinks()
+  }
+
+  func addLink() -> Void {
+    NSLog("adding link")
   }
 
   override func viewWillLayoutSubviews() {

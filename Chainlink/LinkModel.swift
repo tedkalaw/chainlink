@@ -8,12 +8,22 @@
 
 import Foundation
 
-class LinkModel: NSObject {
+let kLinkModelDateKey = "linkModelDate"
+
+class LinkModel: NSObject, NSCoding {
   var date: NSDate;
 
   init(date: NSDate) {
     self.date = date
     super.init();
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    self.date = aDecoder.decodeObjectForKey(kLinkModelDateKey) as! NSDate
+  }
+
+  func encodeWithCoder(aCoder: NSCoder) -> Void {
+    aCoder.encodeObject(self.date, forKey: kLinkModelDateKey)
   }
 
   func dateString() -> String {

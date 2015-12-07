@@ -16,6 +16,7 @@
 		9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */; };
 		9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA81C13D3E30075654E /* ChainView.swift */; };
 		9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EAC1C151D220075654E /* LinkModel.swift */; };
+		9AEA2EAF1C1538920075654E /* ChainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EAE1C1538920075654E /* ChainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainViewController.swift; sourceTree = "<group>"; };
 		9AEA2EA81C13D3E30075654E /* ChainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainView.swift; sourceTree = "<group>"; };
 		9AEA2EAC1C151D220075654E /* LinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
+		9AEA2EAE1C1538920075654E /* ChainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */,
 				9AEA2EA81C13D3E30075654E /* ChainView.swift */,
 				9AEA2EAC1C151D220075654E /* LinkModel.swift */,
+				9AEA2EAE1C1538920075654E /* ChainModel.swift */,
 			);
 			path = Chainlink;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */,
 				9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */,
 				9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */,
+				9AEA2EAF1C1538920075654E /* ChainModel.swift in Sources */,
 				9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

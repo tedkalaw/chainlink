@@ -15,6 +15,7 @@
 		9AA6BFB21C025FAB000F42F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */; };
 		9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */; };
 		9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA81C13D3E30075654E /* ChainView.swift */; };
+		9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EAC1C151D220075654E /* LinkModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9AA6BFB31C025FAB000F42F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainViewController.swift; sourceTree = "<group>"; };
 		9AEA2EA81C13D3E30075654E /* ChainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainView.swift; sourceTree = "<group>"; };
+		9AEA2EAC1C151D220075654E /* LinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				9A23E2BE1C0283AD004AB17C /* InitialView.swift */,
 				9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */,
 				9AEA2EA81C13D3E30075654E /* ChainView.swift */,
+				9AEA2EAC1C151D220075654E /* LinkModel.swift */,
 			);
 			path = Chainlink;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */,
 				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,
 				9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */,
 				9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */,

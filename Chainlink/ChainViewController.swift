@@ -14,7 +14,7 @@ class ChainViewController:UIViewController,
   ChainViewDelegate {
 
   var chainView: ChainView?
-  var cellText: [String]?
+  var links: [LinkModel]?
 
   override func viewDidLoad() {
     super.viewDidLoad();
@@ -27,7 +27,22 @@ class ChainViewController:UIViewController,
     self.title = "Chain"
     self.navigationController?.navigationBarHidden = false
 
-    self.cellText = ["1", "2", "3", "4", "5"]
+    if (self.links != nil) {
+      return
+    }
+
+    let dateFormatter = NSDateFormatter()
+    let locale = NSLocale(localeIdentifier: "en_US_POSIX")
+
+    dateFormatter.locale = locale
+    dateFormatter.dateFormat = "MM-dd-yyyy"
+
+    self.links = [
+      LinkModel(date: dateFormatter.dateFromString("12-05-2015")!),
+      LinkModel(date: dateFormatter.dateFromString("12-04-2015")!),
+      LinkModel(date: dateFormatter.dateFromString("12-03-2015")!),
+      LinkModel(date: dateFormatter.dateFromString("12-02-2015")!)
+    ]
   }
 
   override func viewWillLayoutSubviews() {
@@ -42,14 +57,14 @@ class ChainViewController:UIViewController,
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return self.links!.count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell",
       forIndexPath: indexPath) 
-    let item = self.cellText![indexPath.row]
-    cell.textLabel?.text = item
+    let item = self.links![indexPath.row]
+    cell.textLabel?.text = item.dateString()
     return cell
   }
 

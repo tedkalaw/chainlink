@@ -30,4 +30,8 @@ class ChainModel: NSObject, NSCoding {
     aCoder.encodeObject(self.title, forKey: kChainModelTitleKey)
     aCoder.encodeObject(self.links, forKey: kChainModelLinksKey)
   }
+
+  func addLink(link: LinkModel) -> Void {
+    links.insert(link, atIndex: 0)
+  }
 }

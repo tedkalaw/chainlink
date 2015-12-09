@@ -13,7 +13,7 @@ class ChainViewController:UIViewController,
   UITableViewDelegate,
   ChainViewDelegate {
 
-  var chain: [ChainModel]?
+  var chain: ChainModel?
   var chainView: ChainView?
   var links: [LinkModel]?
   var addButton: UIBarButtonItem?
@@ -37,11 +37,7 @@ class ChainViewController:UIViewController,
       action: "addLink"
     )
 
-    if (self.links != nil) {
-      return
-    }
-
-    self.links = self.getLinks()
+    self.chain = ChainModel(title: "Chainlink", links: [])
   }
 
   override func viewWillLayoutSubviews() {
@@ -56,39 +52,23 @@ class ChainViewController:UIViewController,
   }
 
   func addLink() -> Void {
-    self.links?.insert(LinkModel(date: NSDate()), atIndex: 0)
+    self.chain?.addLink(LinkModel(date: NSDate()))
     self.chainView?.reloadData()
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.links!.count
+    return self.chain!.links.count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell",
       forIndexPath: indexPath) 
-    let item = self.links![indexPath.row]
+    let item = self.chain!.links[indexPath.row]
     cell.textLabel?.text = item.dateString()
     return cell
   }
 
   override func viewWillDisappear(animated: Bool) {
     self.navigationController?.navigationBarHidden = true
-  }
-
-  // TODO: Fetch from disk
-  func getLinks() -> [LinkModel] {
-    let dateFormatter = NSDateFormatter()
-    let locale = NSLocale(localeIdentifier: "en_US_POSIX")
-
-    dateFormatter.locale = locale
-    dateFormatter.dateFormat = "MM-dd-yyyy"
-
-    return [
-      LinkModel(date: dateFormatter.dateFromString("12-05-2015")!),
-      LinkModel(date: dateFormatter.dateFromString("12-04-2015")!),
-      LinkModel(date: dateFormatter.dateFromString("12-03-2015")!),
-      LinkModel(date: dateFormatter.dateFromString("12-02-2015")!)
-    ];
   }
 }

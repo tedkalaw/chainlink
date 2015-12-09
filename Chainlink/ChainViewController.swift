@@ -18,6 +18,19 @@ class ChainViewController:UIViewController,
   var links: [LinkModel]?
   var addButton: UIBarButtonItem?
 
+  override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+  }
+
+  convenience init(chainTitle: String) {
+    self.init()
+    self.chain = ChainModel.load(chainTitle)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad();
 
@@ -26,8 +39,7 @@ class ChainViewController:UIViewController,
     self.chainView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     self.view.addSubview(self.chainView!)
 
-    self.title = "Chain"
-    self.navigationController?.navigationBarHidden = false
+    self.title = self.chain?.title
 
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(
       title: "Add",
@@ -35,8 +47,6 @@ class ChainViewController:UIViewController,
       target: self,
       action: "addLink"
     )
-
-    self.chain = ChainModel.load("Chainlink")
   }
 
   override func viewWillLayoutSubviews() {
@@ -66,9 +76,5 @@ class ChainViewController:UIViewController,
     let item = self.chain!.links[indexPath.row]
     cell.textLabel?.text = item.dateString()
     return cell
-  }
-
-  override func viewWillDisappear(animated: Bool) {
-    self.navigationController?.navigationBarHidden = true
   }
 }

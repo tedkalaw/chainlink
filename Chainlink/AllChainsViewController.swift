@@ -52,10 +52,6 @@ class AllChainsViewController: UIViewController,
     )
   }
 
-  override func viewWillDisappear(animated: Bool) {
-    self.navigationController?.navigationBarHidden = true
-  }
-
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.chainModelStore!.chainsTitles().count
   }
@@ -93,5 +89,12 @@ class AllChainsViewController: UIViewController,
     presentViewController(alert,
       animated: true,
       completion: nil)
+  }
+
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+    let chainTitle = self.chainModelStore!.chainsTitles()[indexPath.row]
+    self.navigationController?.pushViewController(ChainViewController(chainTitle: chainTitle), animated: true)
+
   }
 }

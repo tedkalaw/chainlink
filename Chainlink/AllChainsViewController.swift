@@ -61,20 +61,26 @@ class AllChainsViewController: UIViewController,
     return cell
   }
 
-  private func addChain() -> Void {
+  func addChain() -> Void {
     let alert = UIAlertController(title: "New Chain",
       message: "Add a new chain",
       preferredStyle: .Alert)
 
-    let cancelAction = UIAlertAction(title: "Cancel",
-      style: .Default) { (action: UIAlertAction) -> Void in
-    }
+    let saveAction = UIAlertAction(title: "Save",
+      style: .Default,
+      handler: { (action:UIAlertAction) -> Void in
+    })
+    alert.addAction(saveAction)
+
+    alert.addAction(UIAlertAction(
+      title: "Cancel",
+      style: .Default,
+      handler: { (action: UIAlertAction) -> Void in }
+    ))
 
     alert.addTextFieldWithConfigurationHandler {
       (textField: UITextField) -> Void in
     }
-
-    alert.addAction(cancelAction)
 
     presentViewController(alert,
       animated: true,

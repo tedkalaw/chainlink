@@ -16,6 +16,22 @@ class ChainModel: NSObject, NSCoding {
   var links: [LinkModel]
   var title: String
 
+  static func getFilePath(title: String) -> String {
+    let manager = NSFileManager.defaultManager()
+    let url = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first! as NSURL
+    return url.URLByAppendingPathComponent(title).path!
+  }
+
+  static func load(title: String) -> ChainModel {
+    let unarchivedObject = NSKeyedUnarchiver.unarchiveObjectWithFile(ChainModel.getFilePath(title)) as? ChainModel
+
+    if (unarchivedObject != nil) {
+      return unarchivedObject!
+    }
+
+    return ChainModel(title: title, links: [])
+  }
+
   init(title: String, links: [LinkModel]) {
     self.links = links
     self.title = title
@@ -29,6 +45,10 @@ class ChainModel: NSObject, NSCoding {
   func encodeWithCoder(aCoder: NSCoder) -> Void {
     aCoder.encodeObject(self.title, forKey: kChainModelTitleKey)
     aCoder.encodeObject(self.links, forKey: kChainModelLinksKey)
+  }
+
+  func save() -> Void {
+    NSKeyedArchiver.archiveRootObject(self, toFile: ChainModel.getFilePath(self.title))
   }
 
   func addLink(link: LinkModel) -> Void {

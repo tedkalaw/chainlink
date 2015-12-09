@@ -30,7 +30,6 @@ class InitialView: UIView {
     birthdayLabel.textAlignment = .Center
     self.birthdayLabel = birthdayLabel
 
-
     let goButton:UIButton = UIButton(type: UIButtonType.RoundedRect)
     goButton.setTitle("GO", forState: UIControlState.Normal)
     goButton.layer.cornerRadius = 5

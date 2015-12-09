@@ -37,7 +37,7 @@ class ChainViewController:UIViewController,
       action: "addLink"
     )
 
-    self.chain = ChainModel(title: "Chainlink", links: [])
+    self.chain = ChainModel.load("Chainlink")
   }
 
   override func viewWillLayoutSubviews() {
@@ -53,6 +53,7 @@ class ChainViewController:UIViewController,
 
   func addLink() -> Void {
     self.chain?.addLink(LinkModel(date: NSDate()))
+    self.chain!.save()
     self.chainView?.reloadData()
   }
 

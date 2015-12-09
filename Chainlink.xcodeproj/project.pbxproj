@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E2BC1C0268E7004AB17C /* RootViewController.swift */; };
 		9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E2BE1C0283AD004AB17C /* InitialView.swift */; };
+		9A307CAB1C17E5A30009EC9B /* ChainModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */; };
 		9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */; };
 		9AA6BFAD1C025FAB000F42F4 /* Chainlink-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */; };
 		9AA6BFAF1C025FAB000F42F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		9A23E2BC1C0268E7004AB17C /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9A23E2BE1C0283AD004AB17C /* InitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainModelStore.swift; sourceTree = "<group>"; };
 		9AA6BFA71C025FAB000F42F4 /* Chainlink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chainlink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chainlink-Prefix.pch"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				9AEA2EA81C13D3E30075654E /* ChainView.swift */,
 				9AEA2EAC1C151D220075654E /* LinkModel.swift */,
 				9AEA2EAE1C1538920075654E /* ChainModel.swift */,
+				9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */,
 			);
 			path = Chainlink;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */,
+				9A307CAB1C17E5A30009EC9B /* ChainModelStore.swift in Sources */,
 				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,
 				9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */,
 				9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */,

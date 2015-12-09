@@ -31,7 +31,10 @@ class RootViewController: UIViewController, InitialViewDelegate {
   }
 
   func handleGoButtonPress() {
-    let chainViewController = ChainViewController()
-    self.navigationController?.pushViewController(chainViewController, animated: true)
+    self.navigationController?.pushViewController(AllChainsViewController(), animated: true)
+  }
+
+  override func viewWillAppear(animated: Bool) {
+    self.navigationController?.navigationBarHidden = true
   }
 }

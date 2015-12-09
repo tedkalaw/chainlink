@@ -8,10 +8,43 @@
 
 import Foundation
 
-class ChainModelStore: NSObject {
-  var chains: [ChainModel]
+let kChainModelStoreChainKeysKey = "chainModelStoreChainKeys"
+let kChainModelStoreFileName = "2chainz"
+
+class ChainModelStore: NSObject, NSCoding {
+  var chainKeys: Set<String>
+
+  static func getFilePath(title: String) -> String {
+    let manager = NSFileManager.defaultManager()
+    let url = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first! as NSURL
+    return url.URLByAppendingPathComponent(title).path!
+  }
 
   override init() {
-    self.chains = []
+    self.chainKeys = Set<String>()
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    self.chainKeys = aDecoder.decodeObjectForKey(kChainModelStoreChainKeysKey) as! Set<String>
+  }
+
+  func encodeWithCoder(aCoder: NSCoder) -> Void {
+    aCoder.encodeObject(self.chainKeys, forKey: kChainModelStoreChainKeysKey)
+  }
+
+  func save() -> Void {
+    NSKeyedArchiver.archiveRootObject(self, toFile: ChainModelStore.getFilePath(kChainModelStoreFileName))
+  }
+
+  static func loadStore() -> ChainModelStore {
+    let unarchivedObject = NSKeyedUnarchiver.unarchiveObjectWithFile(
+      ChainModelStore.getFilePath(kChainModelStoreChainKeysKey)
+    ) as? ChainModelStore
+
+    if (unarchivedObject != nil) {
+      return unarchivedObject!
+    }
+
+    return ChainModelStore()
   }
 }

@@ -43,7 +43,7 @@ class ChainViewController:UIViewController,
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
 
-    self.chainView?.frame = CGRectMake(
+    self.chainView!.frame = CGRectMake(
       self.view.bounds.origin.x,
       self.view.bounds.origin.y,
       self.view.bounds.size.width,

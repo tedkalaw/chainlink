@@ -38,7 +38,7 @@ class ChainModelStore: NSObject, NSCoding {
 
   static func loadStore() -> ChainModelStore {
     let unarchivedObject = NSKeyedUnarchiver.unarchiveObjectWithFile(
-      ChainModelStore.getFilePath(kChainModelStoreChainKeysKey)
+      ChainModelStore.getFilePath(kChainModelStoreFileName)
     ) as? ChainModelStore
 
     if (unarchivedObject != nil) {
@@ -46,5 +46,17 @@ class ChainModelStore: NSObject, NSCoding {
     }
 
     return ChainModelStore()
+  }
+
+  func chainsTitles() -> Array<String> {
+    return Array(self.chainKeys).sort()
+  }
+
+  func newChain(title: String) -> ChainModel {
+    let newChainModel = ChainModel(title: title, links: [])
+    newChainModel.save()
+    self.chainKeys.insert(title)
+    self.save()
+    return newChainModel
   }
 }

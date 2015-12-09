@@ -21,8 +21,15 @@ class AllChainsViewController: UIViewController,
     self.title = "All Chains"
     self.navigationController?.navigationBarHidden = false
 
-    self.allChainsView = AllChainsView() 
-    self.view.addSubview(self.allChainsView!)
+    let allChainsView = AllChainsView()
+    allChainsView.delegate = self
+    allChainsView.dataSource = self
+    allChainsView.registerClass(
+      UITableViewCell.self,
+      forCellReuseIdentifier: "cell"
+    )
+    self.view.addSubview(allChainsView)
+    self.allChainsView = allChainsView
 
     self.chainModelStore = ChainModelStore.loadStore()
 
@@ -49,15 +56,14 @@ class AllChainsViewController: UIViewController,
     self.navigationController?.navigationBarHidden = true
   }
 
-
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return (chainModelStore?.chainKeys.count)!
+    return self.chainModelStore!.chainsTitles().count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell",
       forIndexPath: indexPath)
-    cell.textLabel?.text = "hi"
+    cell.textLabel?.text = self.chainModelStore!.chainsTitles()[indexPath.row]
     return cell
   }
 
@@ -69,6 +75,8 @@ class AllChainsViewController: UIViewController,
     let saveAction = UIAlertAction(title: "Save",
       style: .Default,
       handler: { (action:UIAlertAction) -> Void in
+        self.chainModelStore!.newChain(alert.textFields!.first!.text!);
+        self.allChainsView?.reloadData()
     })
     alert.addAction(saveAction)
 

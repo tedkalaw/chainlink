@@ -25,6 +25,13 @@ class AllChainsViewController: UIViewController,
     self.view.addSubview(self.allChainsView!)
 
     self.chainModelStore = ChainModelStore.loadStore()
+
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+      title: "Add",
+      style: .Plain,
+      target: self,
+      action: "addChain"
+    )
   }
 
   override func viewWillLayoutSubviews() {
@@ -36,11 +43,15 @@ class AllChainsViewController: UIViewController,
       self.view.bounds.size.width,
       self.view.bounds.size.height
     )
-
   }
 
+  override func viewWillDisappear(animated: Bool) {
+    self.navigationController?.navigationBarHidden = true
+  }
+
+
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return (chainModelStore?.chainKeys.count)!
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,7 +61,23 @@ class AllChainsViewController: UIViewController,
     return cell
   }
 
-  override func viewWillDisappear(animated: Bool) {
-    self.navigationController?.navigationBarHidden = true
+  private func addChain() -> Void {
+    let alert = UIAlertController(title: "New Chain",
+      message: "Add a new chain",
+      preferredStyle: .Alert)
+
+    let cancelAction = UIAlertAction(title: "Cancel",
+      style: .Default) { (action: UIAlertAction) -> Void in
+    }
+
+    alert.addTextFieldWithConfigurationHandler {
+      (textField: UITextField) -> Void in
+    }
+
+    alert.addAction(cancelAction)
+
+    presentViewController(alert,
+      animated: true,
+      completion: nil)
   }
 }

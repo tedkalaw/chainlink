@@ -29,7 +29,6 @@ class ChainViewController:UIViewController,
     self.title = "Chain"
     self.navigationController?.navigationBarHidden = false
 
-
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(
       title: "Add",
       style: .Plain,

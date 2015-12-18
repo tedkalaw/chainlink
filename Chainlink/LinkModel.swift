@@ -31,7 +31,7 @@ class LinkModel: NSObject, NSCoding {
     let locale = NSLocale(localeIdentifier: "en_US_POSIX")
 
     dateFormatter.locale = locale
-    dateFormatter.dateFormat = "MM-dd-yyyy"
+    dateFormatter.dateFormat = "MM-dd-yyyy 'at' hh:mm a"
 
     return dateFormatter.stringFromDate(self.date)
   }

@@ -25,7 +25,7 @@ class AllChainsViewController: UIViewController,
     allChainsView.delegate = self
     allChainsView.dataSource = self
     allChainsView.registerClass(
-      UITableViewCell.self,
+      ChainViewCell.self,
       forCellReuseIdentifier: "cell"
     )
     self.view.addSubview(allChainsView)
@@ -58,8 +58,8 @@ class AllChainsViewController: UIViewController,
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell",
-      forIndexPath: indexPath)
-    cell.textLabel?.text = self.chainModelStore!.chainsTitles()[indexPath.row]
+      forIndexPath: indexPath) as! ChainViewCell
+    cell.chain = self.getChain(indexPath)
     return cell
   }
 
@@ -96,5 +96,10 @@ class AllChainsViewController: UIViewController,
     let chainTitle = self.chainModelStore!.chainsTitles()[indexPath.row]
     self.navigationController?.pushViewController(ChainViewController(chainTitle: chainTitle), animated: true)
 
+  }
+
+  private func getChain(indexPath: NSIndexPath) -> ChainModel {
+    let chainTitles:Array<String> = self.chainModelStore!.chainsTitles()
+    return ChainModel.load(chainTitles[indexPath.row]);
   }
 }

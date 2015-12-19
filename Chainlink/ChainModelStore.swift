@@ -59,4 +59,8 @@ class ChainModelStore: NSObject, NSCoding {
     self.save()
     return newChainModel
   }
+
+  func getChain(title: String) -> ChainModel {
+    return ChainModel.load(title)
+  }
 }

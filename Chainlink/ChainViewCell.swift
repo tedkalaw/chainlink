@@ -27,18 +27,20 @@ class ChainViewCell: UITableViewCell {
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    self.chainTitleLabel = UILabel()
-    self.linkCountLabel = UILabel()
-    self.selectionStyle = .None
-    self.contentView.addSubview(self.chainTitleLabel!)
-    self.contentView.addSubview(self.linkCountLabel!)
+
     self.separatorInset = UIEdgeInsetsZero
     self.layoutMargins = UIEdgeInsetsZero
+    self.selectionStyle = .None
+
+    self.chainTitleLabel = UILabel()
+    self.linkCountLabel = UILabel()
+
+    self.contentView.addSubview(self.chainTitleLabel!)
+    self.contentView.addSubview(self.linkCountLabel!)
   }
 
   // TODO lol figure out a non-shitty way to layout frames
   override func layoutSubviews() {
-    self.separatorInset = UIEdgeInsetsZero
     super.layoutSubviews()
     self.contentView.layoutIfNeeded()
     self.chainTitleLabel!.frame = CGRectMake(20, 13, 200, 20)

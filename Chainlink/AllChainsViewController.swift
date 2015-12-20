@@ -82,6 +82,7 @@ class AllChainsViewController: UIViewController,
       style: .Default,
       handler: { (action:UIAlertAction) -> Void in
         self.chainModelStore!.newChain(alert.textFields!.first!.text!);
+        self.chainModelDictionary = ChainModelStore.chainMap()
         self.allChainsView?.reloadData()
     })
     alert.addAction(saveAction)

@@ -91,15 +91,31 @@ class ChainViewCell: UITableViewCell {
         return
       }
 
+      let swipeDistance:CGFloat = frame.size.width / 5.0
+
       self.myContentView!.center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
       // has the user dragged the item far enough
-      self.shouldIncrement = self.myContentView!.frame.origin.x > frame.size.width / 5.0
+      self.shouldIncrement = self.myContentView!.frame.origin.x > swipeDistance
+
 
       if (self.shouldIncrement) {
         self.counterView.totalForPeriod = self.chain!.links.count + 1
       } else {
         self.counterView.totalForPeriod = self.chain!.links.count
       }
+
+      // TODO: Refactor this 
+      let distanceRatio = self.myContentView!.frame.origin.x / swipeDistance
+      let greenColor = UIColor.greenColor()
+      var hue:CGFloat = 0
+      var saturation:CGFloat = 0
+      var brightness:CGFloat = 0
+      var alpha:CGFloat = 0
+
+      greenColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+      self.counterView.backgroundColor = distanceRatio >= 1
+        ? greenColor
+        : UIColor(hue: hue * distanceRatio, saturation: saturation, brightness: brightness, alpha: alpha)
     }
 
     if (recognizer.state == .Ended) {

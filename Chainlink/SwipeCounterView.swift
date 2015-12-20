@@ -43,7 +43,7 @@ class SwipeCounterView : UIView {
     self.totalCountLabel.frame = CGRectMake(
       self.bounds.origin.x + 10,
       self.bounds.origin.y + (self.bounds.size.height - rect.size.height) / 2.0,
-      rect.size.width + 20,
+      self.bounds.size.width,
       rect.size.height
     )
   }

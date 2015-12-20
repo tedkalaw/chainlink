@@ -104,8 +104,8 @@ class ChainViewCell: UITableViewCell {
         self.counterView.totalForPeriod = self.chain!.links.count
       }
 
-      // TODO: Refactor this 
-      let distanceRatio = self.myContentView!.frame.origin.x / swipeDistance
+      // TODO: Refactor this
+      let distanceRatio = self.myContentView!.frame.origin.x / (swipeDistance + 30)
       let greenColor = UIColor.greenColor()
       var hue:CGFloat = 0
       var saturation:CGFloat = 0
@@ -113,7 +113,7 @@ class ChainViewCell: UITableViewCell {
       var alpha:CGFloat = 0
 
       greenColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
-      self.counterView.backgroundColor = distanceRatio >= 1
+      self.counterView.backgroundColor = self.myContentView!.frame.origin.x >= swipeDistance
         ? greenColor
         : UIColor(hue: hue * distanceRatio, saturation: saturation, brightness: brightness, alpha: alpha)
     }

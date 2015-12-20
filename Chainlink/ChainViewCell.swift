@@ -9,6 +9,10 @@
 import UIKit
 import QuartzCore
 
+protocol ChainViewCellDelegate {
+  func handleAddLink() -> Void
+}
+
 class ChainViewCell: UITableViewCell {
 
   var chain:ChainModel? {
@@ -20,6 +24,9 @@ class ChainViewCell: UITableViewCell {
 
   var chainTitleLabel:UILabel?
   var linkCountLabel:UILabel?
+  var delegate:ChainViewCellDelegate?
+  var originalCenter:CGPoint = CGPoint()
+  var shouldIncrement:Bool = false
 
   required init(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
@@ -39,6 +46,11 @@ class ChainViewCell: UITableViewCell {
 
     self.contentView.addSubview(self.chainTitleLabel!)
     self.contentView.addSubview(self.linkCountLabel!)
+
+    let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
+    recognizer.delegate = self
+    self.contentView.addGestureRecognizer(recognizer)
+
   }
 
   // TODO lol figure out a non-shitty way to layout frames
@@ -49,4 +61,37 @@ class ChainViewCell: UITableViewCell {
     self.linkCountLabel!.frame = CGRectMake(330, 12, 30, 20)
   }
 
+  func handlePan(recognizer: UIPanGestureRecognizer) {
+    if recognizer.state == .Began {
+      // when the gesture begins, record the current center location
+      self.originalCenter = center
+    }
+
+    if (recognizer.state == .Changed) {
+      let translation = recognizer.translationInView(self)
+
+      if (translation.x < 0) {
+        // don't support swiping to the left right now
+        return
+      }
+
+      center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
+      // has the user dragged the item far enough
+      self.shouldIncrement = frame.origin.x > frame.size.width / 8.0
+    }
+
+    if (recognizer.state == .Ended) {
+      let originalFrame = CGRect(x: 0, y: frame.origin.y,
+        width: bounds.size.width, height: bounds.size.height)
+      if (shouldIncrement) {
+        self.delegate?.handleAddLink()
+      }
+      // snap back to original location
+      UIView.animateWithDuration(0.2, animations: {self.frame = originalFrame})
+    }
+  }
+
+  override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    return true
+  }
 }

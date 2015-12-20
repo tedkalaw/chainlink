@@ -10,7 +10,8 @@ import UIKit
 
 class AllChainsViewController: UIViewController,
   UITableViewDataSource,
-  UITableViewDelegate {
+  UITableViewDelegate,
+  ChainViewCellDelegate {
 
   var allChainsView: AllChainsView?
   var chainModelStore: ChainModelStore?
@@ -68,6 +69,7 @@ class AllChainsViewController: UIViewController,
     let cell = tableView.dequeueReusableCellWithIdentifier("cell",
       forIndexPath: indexPath) as! ChainViewCell
     cell.chain = self.getChain(indexPath)
+    cell.delegate = self
     return cell
   }
 
@@ -114,5 +116,11 @@ class AllChainsViewController: UIViewController,
   private func getChain(indexPath: NSIndexPath) -> ChainModel {
     let chainTitles:Array<String> = self.chainModelStore!.chainsTitles()
     return self.chainModelDictionary[chainTitles[indexPath.row]]!
+  }
+
+  func handleAddLink() {
+    NSLog("adding link")
+    // add link
+    // reload data
   }
 }

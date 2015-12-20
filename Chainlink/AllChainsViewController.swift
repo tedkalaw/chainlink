@@ -33,11 +33,6 @@ class AllChainsViewController: UIViewController,
     self.view.addSubview(allChainsView)
     self.allChainsView = allChainsView
 
-    // TODO: Remove the need to have a ref to the store? Will be nice to 
-    // have a DB
-    self.chainModelStore = ChainModelStore.loadStore()
-    self.chainModelDictionary = self.chainModelStore!.getChainMap()
-
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(
       title: "Add",
       style: .Plain,
@@ -55,6 +50,14 @@ class AllChainsViewController: UIViewController,
       self.view.bounds.size.width,
       self.view.bounds.size.height
     )
+  }
+
+  override func viewWillAppear(animated: Bool) {
+    // TODO: Remove the need to have a ref to the store? Will be nice to 
+    // have a DB
+    self.chainModelStore = ChainModelStore.loadStore()
+    self.chainModelDictionary = self.chainModelStore!.getChainMap()
+    self.allChainsView?.reloadData()
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -14,11 +14,13 @@ class AllChainsViewController: UIViewController,
 
   var allChainsView: AllChainsView?
   var chainModelStore: ChainModelStore?
+  var chainModelDictionary: Dictionary<String, ChainModel> = Dictionary<String, ChainModel>()
 
   override func viewDidLoad() -> Void {
     super.viewDidLoad()
 
     self.title = "All Chains"
+
     self.navigationController?.navigationBarHidden = false
 
     let allChainsView = AllChainsView()
@@ -31,7 +33,10 @@ class AllChainsViewController: UIViewController,
     self.view.addSubview(allChainsView)
     self.allChainsView = allChainsView
 
+    // TODO: Remove the need to have a ref to the store? Will be nice to 
+    // have a DB
     self.chainModelStore = ChainModelStore.loadStore()
+    self.chainModelDictionary = self.chainModelStore!.getChainMap()
 
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(
       title: "Add",
@@ -53,7 +58,7 @@ class AllChainsViewController: UIViewController,
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.chainModelStore!.chainsTitles().count
+    return self.chainModelDictionary.keys.count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -95,11 +100,10 @@ class AllChainsViewController: UIViewController,
 
     let chainTitle = self.chainModelStore!.chainsTitles()[indexPath.row]
     self.navigationController?.pushViewController(ChainViewController(chainTitle: chainTitle), animated: true)
-
   }
 
   private func getChain(indexPath: NSIndexPath) -> ChainModel {
     let chainTitles:Array<String> = self.chainModelStore!.chainsTitles()
-    return ChainModel.load(chainTitles[indexPath.row]);
+    return self.chainModelDictionary[chainTitles[indexPath.row]]!
   }
 }

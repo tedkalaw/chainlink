@@ -27,7 +27,7 @@ class ChainViewCell: UITableViewCell {
   }
 
   override func layoutSubviews() {
-    super.layoutSubviews();
+    super.layoutSubviews()
   }
 
 }

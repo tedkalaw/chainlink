@@ -63,4 +63,18 @@ class ChainModelStore: NSObject, NSCoding {
   func getChain(title: String) -> ChainModel {
     return ChainModel.load(title)
   }
+
+  func getChainMap() -> Dictionary<String, ChainModel> {
+    var chainMap = Dictionary<String, ChainModel>()
+    for chainKey in self.chainKeys {
+      chainMap[chainKey] = ChainModel.load(chainKey)
+    }
+
+    return chainMap
+  }
+
+  static func chainMap() -> Dictionary<String, ChainModel> {
+    let store:ChainModelStore = ChainModelStore.loadStore()
+    return store.getChainMap()
+  }
 }

@@ -10,11 +10,13 @@ import Foundation
 
 let kChainModelTitleKey = "chainModelTitle"
 let kChainModelLinksKey = "chainLinksTitle"
+let kChainModelFrequencyKey = "chainFrequencyKey"
 
 class ChainModel: NSObject, NSCoding {
 
   var links: [LinkModel]
   var title: String
+  var frequency: Frequency
 
   static func getFilePath(title: String) -> String {
     let manager = NSFileManager.defaultManager()
@@ -35,16 +37,19 @@ class ChainModel: NSObject, NSCoding {
   init(title: String, links: [LinkModel]) {
     self.links = links
     self.title = title
+    self.frequency = Frequency.DAILY
   }
 
   required init?(coder aDecoder: NSCoder) {
     self.title = aDecoder.decodeObjectForKey(kChainModelTitleKey) as! String
     self.links = aDecoder.decodeObjectForKey(kChainModelLinksKey) as! [LinkModel]
+    self.frequency = Frequency(rawValue: aDecoder.decodeObjectForKey(kChainModelFrequencyKey) as! String? ?? Frequency.DAILY.rawValue)!
   }
 
   func encodeWithCoder(aCoder: NSCoder) -> Void {
     aCoder.encodeObject(self.title, forKey: kChainModelTitleKey)
     aCoder.encodeObject(self.links, forKey: kChainModelLinksKey)
+    aCoder.encodeObject(self.frequency.rawValue, forKey: kChainModelFrequencyKey)
   }
 
   func save() -> Void {

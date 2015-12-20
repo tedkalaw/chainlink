@@ -55,7 +55,6 @@ class ChainViewController:UIViewController,
     }
 
     self.chain!.removeLink(self.chain!.links[indexPath.row])
-    self.chain!.save()
     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
   }
 
@@ -72,7 +71,6 @@ class ChainViewController:UIViewController,
 
   func addLink() -> Void {
     self.chain?.addLink(LinkModel(date: NSDate()))
-    self.chain!.save()
     self.chainView?.reloadData()
   }
 

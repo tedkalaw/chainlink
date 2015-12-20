@@ -32,6 +32,8 @@ class ChainViewCell: UITableViewCell {
     self.layoutMargins = UIEdgeInsetsZero
     self.selectionStyle = .None
 
+    self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+
     self.chainTitleLabel = UILabel()
     self.linkCountLabel = UILabel()
 
@@ -43,8 +45,8 @@ class ChainViewCell: UITableViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
     self.contentView.layoutIfNeeded()
-    self.chainTitleLabel!.frame = CGRectMake(20, 13, 200, 20)
-    self.linkCountLabel!.frame = CGRectMake(340, 13, 30, 20)
+    self.chainTitleLabel!.frame = CGRectMake(20, 12, 200, 20)
+    self.linkCountLabel!.frame = CGRectMake(330, 12, 30, 20)
   }
 
 }

@@ -54,4 +54,12 @@ class ChainModel: NSObject, NSCoding {
   func addLink(link: LinkModel) -> Void {
     links.insert(link, atIndex: 0)
   }
+
+  func removeLink(linkToDelete: LinkModel) -> Void {
+    for (var i = 0; i < links.count; i++) {
+      if (links[i] == linkToDelete) {
+        links.removeAtIndex(i)
+      }
+    }
+  }
 }

@@ -15,7 +15,6 @@ class ChainViewController:UIViewController,
 
   var chain: ChainModel?
   var chainView: ChainView?
-  var links: [LinkModel]?
   var addButton: UIBarButtonItem?
 
   override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
@@ -47,6 +46,17 @@ class ChainViewController:UIViewController,
       target: self,
       action: "addLink"
     )
+  }
+
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if (editingStyle != UITableViewCellEditingStyle.Delete) {
+      // Only handle delete in this controller for now
+      return;
+    }
+
+    self.chain!.removeLink(self.chain!.links[indexPath.row])
+    self.chain!.save()
+    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
   }
 
   override func viewWillLayoutSubviews() {

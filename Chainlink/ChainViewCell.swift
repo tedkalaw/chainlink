@@ -19,6 +19,7 @@ class ChainViewCell: UITableViewCell {
     didSet {
       self.chainTitleLabel?.text = chain!.title
       self.linkCountLabel?.text = String(chain!.links.count)
+      self.counterView.totalForPeriod = chain!.links.count
       self.layoutIfNeeded()
     }
   }
@@ -30,6 +31,7 @@ class ChainViewCell: UITableViewCell {
   var shouldIncrement:Bool = false
   var settingsButton:UIButton?
   var myContentView:UITableViewCell!
+  var counterView:SwipeCounterView!
 
   required init(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
@@ -44,6 +46,7 @@ class ChainViewCell: UITableViewCell {
 
     self.chainTitleLabel = UILabel()
     self.linkCountLabel = UILabel()
+    self.counterView = SwipeCounterView()
 
     self.myContentView = UITableViewCell()
     self.myContentView!.addSubview(self.chainTitleLabel!)
@@ -53,6 +56,7 @@ class ChainViewCell: UITableViewCell {
 
     let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
     recognizer.delegate = self
+    self.contentView.addSubview(self.counterView)
     self.contentView.addSubview(self.myContentView!)
     self.contentView.addGestureRecognizer(recognizer)
     self.contentView.backgroundColor = UIColor.blackColor()
@@ -65,6 +69,7 @@ class ChainViewCell: UITableViewCell {
     self.chainTitleLabel!.frame = CGRectMake(20, 12, 200, 20)
     self.linkCountLabel!.frame = CGRectMake(330, 12, 30, 20)
     self.myContentView!.frame = self.bounds
+    self.counterView.frame = self.bounds
   }
 
   func handlePan(recognizer: UIPanGestureRecognizer) {

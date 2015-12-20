@@ -13,11 +13,13 @@ class ChainViewCell: UITableViewCell {
 
   var chain:ChainModel? {
     didSet {
-      self.chainTitleLabel?.text = chain?.title
+      self.chainTitleLabel?.text = chain!.title
+      self.linkCountLabel?.text = String(chain!.links.count)
     }
   }
 
   var chainTitleLabel:UILabel?
+  var linkCountLabel:UILabel?
 
   required init(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
@@ -26,13 +28,19 @@ class ChainViewCell: UITableViewCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     self.chainTitleLabel = UILabel()
+    self.linkCountLabel = UILabel()
     self.selectionStyle = .None
+    self.separatorInset = UIEdgeInsetsZero
     self.contentView.addSubview(self.chainTitleLabel!)
+    self.contentView.addSubview(self.linkCountLabel!)
   }
 
+  // TODO lol figure out a non-shitty way to layout frames
   override func layoutSubviews() {
-    self.chainTitleLabel!.frame = CGRectMake(20, 10, 200, 20)
     super.layoutSubviews()
+    self.contentView.layoutIfNeeded()
+    self.chainTitleLabel!.frame = CGRectMake(20, 13, 200, 20)
+    self.linkCountLabel!.frame = CGRectMake(340, 10, 30, 20)
   }
 
 }

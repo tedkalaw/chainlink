@@ -88,7 +88,13 @@ class ChainViewCell: UITableViewCell {
 
       self.myContentView!.center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
       // has the user dragged the item far enough
-      self.shouldIncrement = self.myContentView!.frame.origin.x > frame.size.width / 8.0
+      self.shouldIncrement = self.myContentView!.frame.origin.x > frame.size.width / 5.0
+
+      if (self.shouldIncrement) {
+        self.counterView.totalForPeriod = self.chain!.links.count + 1
+      } else {
+        self.counterView.totalForPeriod = self.chain!.links.count
+      }
     }
 
     if (recognizer.state == .Ended) {

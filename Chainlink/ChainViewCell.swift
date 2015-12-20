@@ -14,8 +14,6 @@ class ChainViewCell: UITableViewCell {
   var chain:ChainModel? {
     didSet {
       self.chainTitleLabel?.text = chain?.title
-
-      self.layoutIfNeeded()
     }
   }
 
@@ -28,11 +26,12 @@ class ChainViewCell: UITableViewCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     self.chainTitleLabel = UILabel()
+    self.selectionStyle = .None
     self.contentView.addSubview(self.chainTitleLabel!)
   }
 
   override func layoutSubviews() {
-    self.chainTitleLabel!.frame = CGRectMake(10, 0, 200, 25)
+    self.chainTitleLabel!.frame = CGRectMake(20, 10, 200, 20)
     super.layoutSubviews()
   }
 

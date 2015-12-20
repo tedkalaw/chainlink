@@ -124,7 +124,12 @@ class ChainViewCell: UITableViewCell {
         self.addLink()
       }
       // snap back to original location
-      UIView.animateWithDuration(0.2, animations: {self.myContentView!.frame = originalFrame})
+      UIView.animateWithDuration(0.2, animations: {
+        self.myContentView!.frame = originalFrame
+        if (!self.shouldIncrement) {
+          self.counterView!.backgroundColor = UIColor.redColor()
+        }
+      })
       self.shouldIncrement = false
     }
   }

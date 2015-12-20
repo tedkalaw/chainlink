@@ -68,6 +68,11 @@ class AllChainsViewController: UIViewController,
     return cell
   }
 
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.layoutMargins = UIEdgeInsetsZero
+    tableView.separatorInset = UIEdgeInsetsZero
+  }
+
   func addChain() -> Void {
     let alert = UIAlertController(title: "New Chain",
       message: "Add a new chain",

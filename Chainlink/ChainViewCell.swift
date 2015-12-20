@@ -13,10 +13,13 @@ class ChainViewCell: UITableViewCell {
 
   var chain:ChainModel? {
     didSet {
-      self.textLabel?.text = chain?.title
-      // TODO: add setter that will set up subviews and all that
+      self.chainTitleLabel?.text = chain?.title
+
+      self.layoutIfNeeded()
     }
   }
+
+  var chainTitleLabel:UILabel?
 
   required init(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
@@ -24,9 +27,12 @@ class ChainViewCell: UITableViewCell {
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+    self.chainTitleLabel = UILabel()
+    self.contentView.addSubview(self.chainTitleLabel!)
   }
 
   override func layoutSubviews() {
+    self.chainTitleLabel!.frame = CGRectMake(10, 0, 200, 25)
     super.layoutSubviews()
   }
 

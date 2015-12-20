@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 protocol ChainViewCellDelegate {
-  func handleAddLink() -> Void
+  func handleAddLink(chain:ChainModel) -> ChainModel
 }
 
 class ChainViewCell: UITableViewCell {
@@ -19,6 +19,7 @@ class ChainViewCell: UITableViewCell {
     didSet {
       self.chainTitleLabel?.text = chain!.title
       self.linkCountLabel?.text = String(chain!.links.count)
+      self.layoutIfNeeded()
     }
   }
 
@@ -84,7 +85,7 @@ class ChainViewCell: UITableViewCell {
       let originalFrame = CGRect(x: 0, y: frame.origin.y,
         width: bounds.size.width, height: bounds.size.height)
       if (shouldIncrement) {
-        self.delegate?.handleAddLink()
+        self.addLink()
       }
       // snap back to original location
       UIView.animateWithDuration(0.2, animations: {self.frame = originalFrame})
@@ -93,5 +94,9 @@ class ChainViewCell: UITableViewCell {
 
   override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
     return true
+  }
+
+  private func addLink() -> Void {
+    self.chain = self.delegate?.handleAddLink(self.chain!)
   }
 }

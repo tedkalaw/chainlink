@@ -61,6 +61,10 @@ class ChainModel: NSObject, NSCoding {
     self.save()
   }
 
+  func addLinkForNow() -> Void {
+    self.addLink(LinkModel(date: NSDate()))
+  }
+
   func removeLink(linkToDelete: LinkModel) -> Void {
     for (var i = 0; i < links.count; i++) {
       if (links[i] == linkToDelete) {

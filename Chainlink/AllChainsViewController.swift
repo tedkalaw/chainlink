@@ -118,9 +118,8 @@ class AllChainsViewController: UIViewController,
     return self.chainModelDictionary[chainTitles[indexPath.row]]!
   }
 
-  func handleAddLink() {
-    NSLog("adding link")
-    // add link
-    // reload data
+  func handleAddLink(chain:ChainModel) -> ChainModel {
+    chain.addLinkForNow()
+    return chain;
   }
 }

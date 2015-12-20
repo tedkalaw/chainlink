@@ -70,7 +70,7 @@ class ChainViewController:UIViewController,
   }
 
   func addLink() -> Void {
-    self.chain?.addLink(LinkModel(date: NSDate()))
+    self.chain?.addLinkForNow()
     self.chainView?.reloadData()
   }
 

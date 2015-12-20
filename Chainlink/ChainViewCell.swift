@@ -51,7 +51,7 @@ class ChainViewCell: UITableViewCell {
     self.myContentView = UITableViewCell()
     self.myContentView!.addSubview(self.chainTitleLabel!)
     self.myContentView!.addSubview(self.linkCountLabel!)
-    self.myContentView!.backgroundColor = UIColor.redColor()
+    self.myContentView!.backgroundColor = UIColor.whiteColor()
     self.myContentView!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
     let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
@@ -59,7 +59,6 @@ class ChainViewCell: UITableViewCell {
     self.contentView.addSubview(self.counterView)
     self.contentView.addSubview(self.myContentView!)
     self.contentView.addGestureRecognizer(recognizer)
-    self.contentView.backgroundColor = UIColor.blackColor()
   }
 
   // TODO lol figure out a non-shitty way to layout frames

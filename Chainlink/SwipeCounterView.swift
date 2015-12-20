@@ -28,10 +28,9 @@ class SwipeCounterView : UIView {
 
   init() {
     self.totalCountLabel = UILabel()
-    self.totalCountLabel.textColor = UIColor.whiteColor()
+    self.totalCountLabel.textColor = UIColor.blackColor()
 
     super.init(frame: CGRectZero)
-    self.backgroundColor = UIColor.blueColor()
     self.addSubview(self.totalCountLabel)
   }
 

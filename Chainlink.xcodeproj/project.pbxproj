@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A1F690C1C273136001F1C21 /* SwipeCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1F690B1C273136001F1C21 /* SwipeCounterView.swift */; };
 		9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E2BC1C0268E7004AB17C /* RootViewController.swift */; };
 		9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E2BE1C0283AD004AB17C /* InitialView.swift */; };
 		9A307CAB1C17E5A30009EC9B /* ChainModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A1F690B1C273136001F1C21 /* SwipeCounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCounterView.swift; sourceTree = "<group>"; };
 		9A23E2BC1C0268E7004AB17C /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9A23E2BE1C0283AD004AB17C /* InitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainModelStore.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A1F690D1C27313B001F1C21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A1F690B1C273136001F1C21 /* SwipeCounterView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		9A307CAC1C17E6A80009EC9B /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		9AA6BFA91C025FAB000F42F4 /* Chainlink */ = {
 			isa = PBXGroup;
 			children = (
+				9A1F690D1C27313B001F1C21 /* Views */,
 				9A307CAC1C17E6A80009EC9B /* Models */,
 				9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */,
 				9A23E2BC1C0268E7004AB17C /* RootViewController.swift */,
@@ -178,6 +189,7 @@
 				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,
 				9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */,
 				9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */,
+				9A1F690C1C273136001F1C21 /* SwipeCounterView.swift in Sources */,
 				9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */,
 				9A307CB01C180B4F0009EC9B /* AllChainsView.swift in Sources */,
 				9A7BF8311C247C8E00A23DC6 /* ChainViewCell.swift in Sources */,

@@ -122,7 +122,6 @@ class ChainViewCell: UITableViewCell {
   }
 
   override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-    return true
     let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer
 
     if (panGestureRecognizer == nil) {

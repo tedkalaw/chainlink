@@ -11,6 +11,7 @@ import QuartzCore
 
 protocol ChainViewCellDelegate {
   func handleAddLink(chain:ChainModel) -> ChainModel
+  func handleSelectChain(chain:ChainModel) -> Void
 }
 
 class ChainViewCell: UITableViewCell {
@@ -56,9 +57,14 @@ class ChainViewCell: UITableViewCell {
 
     let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
     recognizer.delegate = self
+
+    let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
+    tapRecognizer.delegate = self
+
     self.contentView.addSubview(self.counterView)
     self.contentView.addSubview(self.myContentView!)
     self.contentView.addGestureRecognizer(recognizer)
+    self.myContentView!.addGestureRecognizer(tapRecognizer)
   }
 
   // TODO lol figure out a non-shitty way to layout frames
@@ -107,14 +113,20 @@ class ChainViewCell: UITableViewCell {
     }
   }
 
+  func handleTap(recognizer: UITapGestureRecognizer) {
+    self.delegate?.handleSelectChain(self.chain!)
+  }
+
   override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
     return true
   }
 
   override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    return true
     let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer
+
     if (panGestureRecognizer == nil) {
-      return false
+      return true
     }
 
     let translation = panGestureRecognizer!.translationInView(superview!)

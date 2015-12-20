@@ -107,12 +107,6 @@ class AllChainsViewController: UIViewController,
       completion: nil)
   }
 
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
-    let chainTitle = self.chainModelStore!.chainsTitles()[indexPath.row]
-    self.navigationController?.pushViewController(ChainViewController(chainTitle: chainTitle), animated: true)
-  }
-
   private func getChain(indexPath: NSIndexPath) -> ChainModel {
     let chainTitles:Array<String> = self.chainModelStore!.chainsTitles()
     return self.chainModelDictionary[chainTitles[indexPath.row]]!
@@ -122,4 +116,9 @@ class AllChainsViewController: UIViewController,
     chain.addLinkForNow()
     return chain;
   }
+
+  func handleSelectChain(chain: ChainModel) {
+    self.navigationController?.pushViewController(ChainViewController(chainTitle: chain.title), animated: true)
+  }
+
 }

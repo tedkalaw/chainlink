@@ -51,7 +51,6 @@ class ChainViewCell: UITableViewCell {
     let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
     recognizer.delegate = self
     self.contentView.addGestureRecognizer(recognizer)
-
   }
 
   // TODO lol figure out a non-shitty way to layout frames
@@ -89,11 +88,25 @@ class ChainViewCell: UITableViewCell {
       }
       // snap back to original location
       UIView.animateWithDuration(0.2, animations: {self.frame = originalFrame})
+      self.shouldIncrement = false
     }
   }
 
   override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
     return true
+  }
+
+  override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer
+    if (panGestureRecognizer == nil) {
+      return false
+    }
+
+    let translation = panGestureRecognizer!.translationInView(superview!)
+    if fabs(translation.x) > fabs(translation.y) {
+      return true
+    }
+    return false
   }
 
   private func addLink() -> Void {

@@ -9,6 +9,12 @@
 import UIKit
 import QuartzCore
 
+enum ActiveView {
+  case LeftView
+  case RightView
+  case None
+}
+
 protocol ChainViewCellDelegate {
   func handleAddLink(chain:ChainModel) -> ChainModel
   func handleSelectChain(chain:ChainModel) -> Void
@@ -30,15 +36,17 @@ class ChainViewCell: UITableViewCell {
   var delegate:ChainViewCellDelegate?
   var originalCenter:CGPoint = CGPoint()
   var shouldIncrement:Bool = false
-  var settingsButton:UIButton?
   var myContentView:UITableViewCell!
   var counterView:SwipeCounterView!
+  var optionsView:SwipeOptionView!
+  var activeView:ActiveView
 
   required init(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
   }
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    self.activeView = .None
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
     self.separatorInset = UIEdgeInsetsZero
@@ -48,6 +56,7 @@ class ChainViewCell: UITableViewCell {
     self.chainTitleLabel = UILabel()
     self.linkCountLabel = UILabel()
     self.counterView = SwipeCounterView()
+    self.optionsView = SwipeOptionView()
 
     self.myContentView = UITableViewCell()
     self.myContentView!.addSubview(self.chainTitleLabel!)
@@ -61,6 +70,7 @@ class ChainViewCell: UITableViewCell {
     let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
     tapRecognizer.delegate = self
 
+    self.contentView.addSubview(self.optionsView)
     self.contentView.addSubview(self.counterView)
     self.contentView.addSubview(self.myContentView!)
     self.contentView.addGestureRecognizer(recognizer)
@@ -75,62 +85,33 @@ class ChainViewCell: UITableViewCell {
     self.linkCountLabel!.frame = CGRectMake(330, 12, 30, 20)
     self.myContentView!.frame = self.bounds
     self.counterView.frame = self.bounds
+    self.optionsView.frame = self.bounds
   }
 
   func handlePan(recognizer: UIPanGestureRecognizer) {
     if recognizer.state == .Began {
-      // when the gesture begins, record the current center location
+      // When the gesture begins, record the current center location
       self.originalCenter = self.myContentView!.center
     }
 
     if (recognizer.state == .Changed) {
       let translation = recognizer.translationInView(self)
-
       if (translation.x < 0) {
-        // don't support swiping to the left right now
-        return
-      }
-
-      let swipeDistance:CGFloat = frame.size.width / 5.0
-
-      self.myContentView!.center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
-      // has the user dragged the item far enough
-      self.shouldIncrement = self.myContentView!.frame.origin.x > swipeDistance
-
-
-      if (self.shouldIncrement) {
-        self.counterView.totalForPeriod = self.chain!.links.count + 1
+        self.activeView = .RightView
+        self.handleLeftSwipeChanged(recognizer)
       } else {
-        self.counterView.totalForPeriod = self.chain!.links.count
+        self.activeView = .LeftView
+        self.handleSwipeRightChanged(recognizer)
       }
-
-      // TODO: Refactor this
-      let distanceRatio = self.myContentView!.frame.origin.x / (swipeDistance + 30)
-      let greenColor = UIColor.greenColor()
-      var hue:CGFloat = 0
-      var saturation:CGFloat = 0
-      var brightness:CGFloat = 0
-      var alpha:CGFloat = 0
-
-      greenColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
-      self.counterView.backgroundColor = self.myContentView!.frame.origin.x >= swipeDistance
-        ? greenColor
-        : UIColor(hue: hue * distanceRatio, saturation: saturation, brightness: brightness, alpha: alpha)
     }
 
     if (recognizer.state == .Ended) {
-      let originalFrame = self.bounds
-      if (shouldIncrement) {
-        self.addLink()
+      if (self.activeView == .LeftView) {
+        self.handleSwipeRightEnded()
+      } else if (self.activeView == .RightView) {
+        self.handleLeftSwipeEnded()
       }
-      // snap back to original location
-      UIView.animateWithDuration(0.2, animations: {
-        self.myContentView!.frame = originalFrame
-        if (!self.shouldIncrement) {
-          self.counterView!.backgroundColor = UIColor.redColor()
-        }
-      })
-      self.shouldIncrement = false
+      self.activeView = .None
     }
   }
 
@@ -158,5 +139,60 @@ class ChainViewCell: UITableViewCell {
 
   private func addLink() -> Void {
     self.chain = self.delegate?.handleAddLink(self.chain!)
+  }
+
+  /**
+   In this view, swiping right is used to quickly add a link
+   */
+  private func handleSwipeRightChanged(recognizer: UIPanGestureRecognizer) -> Void {
+    let translation = recognizer.translationInView(self)
+
+    let swipeDistance:CGFloat = frame.size.width / 5.0
+    
+    self.myContentView!.center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
+    // has the user dragged the item far enough
+    self.shouldIncrement = self.myContentView!.frame.origin.x > swipeDistance
+    
+    if (self.shouldIncrement) {
+      self.counterView.totalForPeriod = self.chain!.links.count + 1
+    } else {
+      self.counterView.totalForPeriod = self.chain!.links.count
+    }
+    
+    // TODO: Refactor this
+    let distanceRatio = self.myContentView!.frame.origin.x / (swipeDistance + 30)
+    let greenColor = UIColor.greenColor()
+    var hue:CGFloat = 0
+    var saturation:CGFloat = 0
+    var brightness:CGFloat = 0
+    var alpha:CGFloat = 0
+    
+    greenColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+    self.counterView.backgroundColor = self.myContentView!.frame.origin.x >= swipeDistance
+      ? greenColor
+      : UIColor(hue: hue * distanceRatio, saturation: saturation, brightness: brightness, alpha: alpha)
+  }
+
+  private func handleSwipeRightEnded() -> Void {
+    let originalFrame = self.bounds
+    if (self.shouldIncrement) {
+      self.addLink()
+    }
+    // snap back to original location
+    UIView.animateWithDuration(0.2, animations: {
+      self.myContentView!.frame = originalFrame
+      if (!self.shouldIncrement) {
+        self.counterView!.backgroundColor = UIColor.redColor()
+      }
+    })
+    self.shouldIncrement = false
+  }
+
+  private func handleLeftSwipeChanged(recognizer: UIPanGestureRecognizer) -> Void {
+
+  }
+
+  private func handleLeftSwipeEnded() -> Void {
+
   }
 }

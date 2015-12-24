@@ -11,6 +11,20 @@ import UIKit
 
 class ChainEditViewController: UIViewController {
   var chainEditView: ChainEditView?
+  var chain: ChainModel?
+
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+  }
+
+  convenience init(chain: ChainModel) {
+    self.init()
+    self.chain = chain
+  }
 
   override func loadView() {
     let v = UIView()

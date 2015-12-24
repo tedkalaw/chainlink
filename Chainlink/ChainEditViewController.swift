@@ -30,5 +30,6 @@ class ChainEditViewController: UIViewController {
     let v = UIView()
     v.backgroundColor = UIColor.redColor()
     self.view = v
+    self.title = self.chain!.title
   }
 }

@@ -20,6 +20,7 @@
 		9AA6BFB21C025FAB000F42F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */; };
 		9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */; };
 		9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */; };
+		9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */; };
 		9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */; };
 		9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA81C13D3E30075654E /* ChainView.swift */; };
 		9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EAC1C151D220075654E /* LinkModel.swift */; };
@@ -43,6 +44,7 @@
 		9AA6BFB31C025FAB000F42F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptionView.swift; sourceTree = "<group>"; };
 		9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditViewController.swift; sourceTree = "<group>"; };
+		9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditView.swift; sourceTree = "<group>"; };
 		9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainViewController.swift; sourceTree = "<group>"; };
 		9AEA2EA81C13D3E30075654E /* ChainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainView.swift; sourceTree = "<group>"; };
 		9AEA2EAC1C151D220075654E /* LinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				9A1F690B1C273136001F1C21 /* SwipeCounterView.swift */,
 				9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */,
+				9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */,
 				9A307CAB1C17E5A30009EC9B /* ChainModelStore.swift in Sources */,
+				9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */,
 				9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */,
 				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,
 				9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */,

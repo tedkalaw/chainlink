@@ -1,5 +1,5 @@
 //
-//  ChainEditViewController.swift
+//  ChainEditView.swift
 //  Chainlink
 //
 //  Created by Ted Kalaw on 12/23/15.
@@ -9,5 +9,6 @@
 import Foundation
 import UIKit
 
-class ChainEditViewController: UIViewController {
+class ChainEditView: UIView {
+  
 }

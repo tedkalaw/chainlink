@@ -41,6 +41,7 @@ class ChainViewCell: UITableViewCell {
   var optionsView:SwipeOptionView!
   var activeView:ActiveView
 
+  var topViewLeftEdge:CGPoint = CGPoint()
   var isRightViewOpen:Bool = false
 
   required init(coder aDecoder: NSCoder) {
@@ -102,18 +103,34 @@ class ChainViewCell: UITableViewCell {
         self.activeView = .RightView
         self.handleLeftSwipeChanged(recognizer)
       } else {
-        self.activeView = .LeftView
-        self.handleSwipeRightChanged(recognizer)
+        if (self.activeView == .RightView && self.isRightViewOpen) {
+          self.handleSwipeRightWithRightViewOpen(recognizer)
+        } else {
+          self.activeView = .LeftView
+          self.handleSwipeRightChanged(recognizer)
+        }
       }
+
+      self.topViewLeftEdge = translation
     }
 
     if (recognizer.state == .Ended) {
       if (self.activeView == .LeftView) {
-        self.handleSwipeRightEnded()
+        if (self.isRightViewOpen) {
+          self.closeRightView()
+        } else {
+          self.handleSwipeRightEnded()
+        }
       } else if (self.activeView == .RightView) {
-        self.handleLeftSwipeEnded()
+        if (self.isRightViewOpen && topViewLeftEdge.x < self.originalCenter.x) {
+          // TODO: Make swiping right actually make this damn thing close
+          //          self.closeRightView()
+        } else {
+          self.handleLeftSwipeEnded()
+        }
       }
       self.activeView = .None
+      topViewLeftEdge = self.originalCenter
     }
   }
 
@@ -216,6 +233,15 @@ class ChainViewCell: UITableViewCell {
 
 
     // TODO: handle manual close swipe
+  }
+
+  private func handleSwipeRightWithRightViewOpen(recognizer: UIPanGestureRecognizer) -> Void {
+    let translation = recognizer.translationInView(self)
+    self.myContentView!.center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
+  }
+
+  private func handleSwipeRightEndedWithRightViewOpen() -> Void {
+    self.closeRightView()
   }
 
   private func handleLeftSwipeEnded() -> Void {

@@ -148,6 +148,7 @@ class ChainViewCell: UITableViewCell {
   }
 
   func handleTapOptions(recognizer: UITapGestureRecognizer) {
+    self.closeRightView()
     self.delegate?.handleSelectChainEdit(self.chain!)
   }
 

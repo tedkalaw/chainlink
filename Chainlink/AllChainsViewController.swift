@@ -117,8 +117,12 @@ class AllChainsViewController: UIViewController,
     return chain;
   }
 
-  func handleSelectChain(chain: ChainModel) {
+  func handleSelectChain(chain: ChainModel) -> Void {
     self.navigationController?.pushViewController(ChainViewController(chainTitle: chain.title), animated: true)
+  }
+
+  func handleSelectChainEdit(chain: ChainModel) -> Void {
+    self.navigationController?.pushViewController(ChainEditViewController(), animated: true)
   }
 
 }

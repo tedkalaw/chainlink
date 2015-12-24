@@ -18,6 +18,7 @@ enum ActiveView {
 protocol ChainViewCellDelegate {
   func handleAddLink(chain:ChainModel) -> ChainModel
   func handleSelectChain(chain:ChainModel) -> Void
+  func handleSelectChainEdit(chain:ChainModel) -> Void
 }
 
 class ChainViewCell: UITableViewCell {
@@ -73,11 +74,15 @@ class ChainViewCell: UITableViewCell {
     let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
     tapRecognizer.delegate = self
 
+    let optionsTapRecognizer = UITapGestureRecognizer(target: self, action: "handleTapOptions:")
+    optionsTapRecognizer.delegate = self
+
     self.contentView.addSubview(self.optionsView)
     self.contentView.addSubview(self.counterView)
     self.contentView.addSubview(self.myContentView!)
     self.contentView.addGestureRecognizer(recognizer)
     self.myContentView!.addGestureRecognizer(tapRecognizer)
+    self.optionsView.addGestureRecognizer(optionsTapRecognizer)
   }
 
   // TODO lol figure out a non-shitty way to layout frames
@@ -140,6 +145,10 @@ class ChainViewCell: UITableViewCell {
     } else {
       self.delegate?.handleSelectChain(self.chain!)
     }
+  }
+
+  func handleTapOptions(recognizer: UITapGestureRecognizer) {
+    self.delegate?.handleSelectChainEdit(self.chain!)
   }
 
   override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {

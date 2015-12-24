@@ -10,4 +10,11 @@ import Foundation
 import UIKit
 
 class ChainEditViewController: UIViewController {
+  var chainEditView: ChainEditView?
+
+  override func loadView() {
+    let v = UIView()
+    v.backgroundColor = UIColor.redColor()
+    self.view = v
+  }
 }

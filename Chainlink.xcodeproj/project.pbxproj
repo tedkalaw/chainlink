@@ -21,6 +21,7 @@
 		9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */; };
 		9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */; };
 		9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */; };
+		9ADC87BB1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B91C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld */; };
 		9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */; };
 		9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA81C13D3E30075654E /* ChainView.swift */; };
 		9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EAC1C151D220075654E /* LinkModel.swift */; };
@@ -45,6 +46,7 @@
 		9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptionView.swift; sourceTree = "<group>"; };
 		9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditViewController.swift; sourceTree = "<group>"; };
 		9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditView.swift; sourceTree = "<group>"; };
+		9ADC87BA1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChainlinkDataModel.xcdatamodel; sourceTree = "<group>"; };
 		9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainViewController.swift; sourceTree = "<group>"; };
 		9AEA2EA81C13D3E30075654E /* ChainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainView.swift; sourceTree = "<group>"; };
 		9AEA2EAC1C151D220075654E /* LinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				9A1F690D1C27313B001F1C21 /* Views */,
 				9A307CAC1C17E6A80009EC9B /* Models */,
 				9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */,
+				9ADC87B91C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld */,
 				9A23E2BC1C0268E7004AB17C /* RootViewController.swift */,
 				9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */,
 				9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */,
@@ -199,6 +202,7 @@
 				9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */,
 				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,
 				9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */,
+				9ADC87BB1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld in Sources */,
 				9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */,
 				9A1F690C1C273136001F1C21 /* SwipeCounterView.swift in Sources */,
 				9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */,
@@ -351,6 +355,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9ADC87B91C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9ADC87BA1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodel */,
+			);
+			currentVersion = 9ADC87BA1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodel */;
+			path = ChainlinkDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9AA6BF9F1C025FAA000F42F4 /* Project object */;
 }

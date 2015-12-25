@@ -22,6 +22,10 @@
 		9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */; };
 		9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */; };
 		9ADC87BB1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B91C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld */; };
+		9ADC87C01C2CF61000AE1979 /* Chain+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87BD1C2CF61000AE1979 /* Chain+CoreDataProperties.m */; };
+		9ADC87C11C2CF61000AE1979 /* Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87BF1C2CF61000AE1979 /* Chain.m */; };
+		9ADC87C61C2CF67800AE1979 /* Link+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87C31C2CF67800AE1979 /* Link+CoreDataProperties.m */; };
+		9ADC87C71C2CF67800AE1979 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87C51C2CF67800AE1979 /* Link.m */; };
 		9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */; };
 		9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA81C13D3E30075654E /* ChainView.swift */; };
 		9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EAC1C151D220075654E /* LinkModel.swift */; };
@@ -47,6 +51,14 @@
 		9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditViewController.swift; sourceTree = "<group>"; };
 		9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditView.swift; sourceTree = "<group>"; };
 		9ADC87BA1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChainlinkDataModel.xcdatamodel; sourceTree = "<group>"; };
+		9ADC87BC1C2CF61000AE1979 /* Chain+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Chain+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9ADC87BD1C2CF61000AE1979 /* Chain+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Chain+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9ADC87BE1C2CF61000AE1979 /* Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chain.h; sourceTree = "<group>"; };
+		9ADC87BF1C2CF61000AE1979 /* Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chain.m; sourceTree = "<group>"; };
+		9ADC87C21C2CF67800AE1979 /* Link+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Link+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9ADC87C31C2CF67800AE1979 /* Link+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Link+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9ADC87C41C2CF67800AE1979 /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
+		9ADC87C51C2CF67800AE1979 /* Link.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Link.m; sourceTree = "<group>"; };
 		9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainViewController.swift; sourceTree = "<group>"; };
 		9AEA2EA81C13D3E30075654E /* ChainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainView.swift; sourceTree = "<group>"; };
 		9AEA2EAC1C151D220075654E /* LinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
@@ -78,6 +90,14 @@
 		9A307CAC1C17E6A80009EC9B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9ADC87C21C2CF67800AE1979 /* Link+CoreDataProperties.h */,
+				9ADC87C31C2CF67800AE1979 /* Link+CoreDataProperties.m */,
+				9ADC87C41C2CF67800AE1979 /* Link.h */,
+				9ADC87C51C2CF67800AE1979 /* Link.m */,
+				9ADC87BC1C2CF61000AE1979 /* Chain+CoreDataProperties.h */,
+				9ADC87BD1C2CF61000AE1979 /* Chain+CoreDataProperties.m */,
+				9ADC87BE1C2CF61000AE1979 /* Chain.h */,
+				9ADC87BF1C2CF61000AE1979 /* Chain.m */,
 				9AEA2EAC1C151D220075654E /* LinkModel.swift */,
 				9AEA2EAE1C1538920075654E /* ChainModel.swift */,
 			);
@@ -197,6 +217,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */,
+				9ADC87C71C2CF67800AE1979 /* Link.m in Sources */,
+				9ADC87C61C2CF67800AE1979 /* Link+CoreDataProperties.m in Sources */,
 				9A307CAB1C17E5A30009EC9B /* ChainModelStore.swift in Sources */,
 				9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */,
 				9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */,
@@ -205,11 +227,13 @@
 				9ADC87BB1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld in Sources */,
 				9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */,
 				9A1F690C1C273136001F1C21 /* SwipeCounterView.swift in Sources */,
+				9ADC87C01C2CF61000AE1979 /* Chain+CoreDataProperties.m in Sources */,
 				9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */,
 				9A307CB01C180B4F0009EC9B /* AllChainsView.swift in Sources */,
 				9A7BF8311C247C8E00A23DC6 /* ChainViewCell.swift in Sources */,
 				9AF1D2741C26492B001ACB77 /* Frequency.swift in Sources */,
 				9A307CAE1C17E6F10009EC9B /* AllChainsViewController.swift in Sources */,
+				9ADC87C11C2CF61000AE1979 /* Chain.m in Sources */,
 				9AEA2EAF1C1538920075654E /* ChainModel.swift in Sources */,
 				9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */,
 				9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */,
@@ -315,10 +339,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Chainlink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TK.Chainlink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -326,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Chainlink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TK.Chainlink;

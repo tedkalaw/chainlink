@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F1021" minimumToolsVersion="Xcode 7.0">
-    <entity name="Chain" syncable="YES">
+    <entity name="Chain" representedClassName="Chain" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="links" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Link" inverseName="chain" inverseEntity="Link" syncable="YES"/>
     </entity>
-    <entity name="Link" parentEntity="Chain" syncable="YES">
+    <entity name="Link" representedClassName="Link" parentEntity="Chain" syncable="YES">
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="chain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chain" inverseName="links" inverseEntity="Chain" syncable="YES"/>
     </entity>

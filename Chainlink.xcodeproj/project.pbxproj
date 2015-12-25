@@ -115,24 +115,24 @@
 		9AA6BFA91C025FAB000F42F4 /* Chainlink */ = {
 			isa = PBXGroup;
 			children = (
-				9A1F690D1C27313B001F1C21 /* Views */,
-				9A307CAC1C17E6A80009EC9B /* Models */,
+				9A307CAF1C180B4F0009EC9B /* AllChainsView.swift */,
+				9A307CAD1C17E6F10009EC9B /* AllChainsViewController.swift */,
 				9AA6BFAA1C025FAB000F42F4 /* AppDelegate.swift */,
-				9ADC87B91C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld */,
-				9A23E2BC1C0268E7004AB17C /* RootViewController.swift */,
-				9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */,
 				9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */,
-				9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */,
+				9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */,
+				9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */,
+				9ADC87B91C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld */,
+				9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */,
+				9AEA2EA81C13D3E30075654E /* ChainView.swift */,
+				9A7BF8301C247C8E00A23DC6 /* ChainViewCell.swift */,
+				9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */,
+				9AF1D2731C26492B001ACB77 /* Frequency.swift */,
 				9AA6BFB31C025FAB000F42F4 /* Info.plist */,
 				9A23E2BE1C0283AD004AB17C /* InitialView.swift */,
-				9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */,
-				9AEA2EA81C13D3E30075654E /* ChainView.swift */,
-				9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */,
-				9A307CAD1C17E6F10009EC9B /* AllChainsViewController.swift */,
-				9A307CAF1C180B4F0009EC9B /* AllChainsView.swift */,
-				9A7BF8301C247C8E00A23DC6 /* ChainViewCell.swift */,
-				9AF1D2731C26492B001ACB77 /* Frequency.swift */,
-				9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */,
+				9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */,
+				9A307CAC1C17E6A80009EC9B /* Models */,
+				9A23E2BC1C0268E7004AB17C /* RootViewController.swift */,
+				9A1F690D1C27313B001F1C21 /* Views */,
 			);
 			path = Chainlink;
 			sourceTree = "<group>";

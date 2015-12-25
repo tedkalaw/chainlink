@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class RootViewController: UIViewController, InitialViewDelegate {
 
   var rootView: InitialView?
   var titleLabel: UILabel?
 
-  override func viewDidLoad() {
-    super.viewDidLoad();
+  override func loadView() {
+    self.view = UIView()
 
     let newRootView:InitialView = InitialView()
     newRootView.delegate = self

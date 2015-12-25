@@ -17,10 +17,11 @@ class RootViewController: UIViewController, InitialViewDelegate {
     super.viewDidLoad();
 
     let newRootView:InitialView = InitialView()
+    newRootView.delegate = self
 
+    self.view.userInteractionEnabled = true
     self.view.addSubview(newRootView)
     self.rootView = newRootView
-    self.rootView?.delegate = self
     self.navigationController?.navigationBarHidden = true
   }
 

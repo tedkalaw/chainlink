@@ -1,19 +1,20 @@
 //
-//  Link+CoreDataProperties.m
+//  Link+CoreDataProperties.swift
 //  Chainlink
 //
-//  Created by Ted Kalaw on 12/24/15.
+//  Created by Ted Kalaw on 12/25/15.
 //  Copyright © 2015 Ted Kalaw. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Link+CoreDataProperties.h"
+import Foundation
+import CoreData
 
-@implementation Link (CoreDataProperties)
+extension Link {
 
-@dynamic time;
-@dynamic chain;
+    @NSManaged var time: NSDate?
+    @NSManaged var chain: Chain?
 
-@end
+}

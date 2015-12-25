@@ -18,14 +18,14 @@
 		9AA6BFAD1C025FAB000F42F4 /* Chainlink-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */; };
 		9AA6BFAF1C025FAB000F42F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */; };
 		9AA6BFB21C025FAB000F42F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */; };
+		9AB691AA1C2DF7F40073FE11 /* Chain+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB691A61C2DF7F40073FE11 /* Chain+CoreDataProperties.swift */; };
+		9AB691AB1C2DF7F40073FE11 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB691A71C2DF7F40073FE11 /* Chain.swift */; };
+		9AB691AC1C2DF7F40073FE11 /* Link+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB691A81C2DF7F40073FE11 /* Link+CoreDataProperties.swift */; };
+		9AB691AD1C2DF7F40073FE11 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB691A91C2DF7F40073FE11 /* Link.swift */; };
 		9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */; };
 		9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */; };
 		9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */; };
 		9ADC87BB1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B91C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld */; };
-		9ADC87C01C2CF61000AE1979 /* Chain+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87BD1C2CF61000AE1979 /* Chain+CoreDataProperties.m */; };
-		9ADC87C11C2CF61000AE1979 /* Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87BF1C2CF61000AE1979 /* Chain.m */; };
-		9ADC87C61C2CF67800AE1979 /* Link+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87C31C2CF67800AE1979 /* Link+CoreDataProperties.m */; };
-		9ADC87C71C2CF67800AE1979 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87C51C2CF67800AE1979 /* Link.m */; };
 		9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */; };
 		9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA81C13D3E30075654E /* ChainView.swift */; };
 		9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EAC1C151D220075654E /* LinkModel.swift */; };
@@ -47,18 +47,14 @@
 		9AA6BFAE1C025FAB000F42F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AA6BFB11C025FAB000F42F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9AA6BFB31C025FAB000F42F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AB691A61C2DF7F40073FE11 /* Chain+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Chain+CoreDataProperties.swift"; path = "Chainlink/Chain+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9AB691A71C2DF7F40073FE11 /* Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chain.swift; path = Chainlink/Chain.swift; sourceTree = "<group>"; };
+		9AB691A81C2DF7F40073FE11 /* Link+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Link+CoreDataProperties.swift"; path = "Chainlink/Link+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9AB691A91C2DF7F40073FE11 /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Link.swift; path = Chainlink/Link.swift; sourceTree = "<group>"; };
 		9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptionView.swift; sourceTree = "<group>"; };
 		9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditViewController.swift; sourceTree = "<group>"; };
 		9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditView.swift; sourceTree = "<group>"; };
 		9ADC87BA1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChainlinkDataModel.xcdatamodel; sourceTree = "<group>"; };
-		9ADC87BC1C2CF61000AE1979 /* Chain+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Chain+CoreDataProperties.h"; sourceTree = "<group>"; };
-		9ADC87BD1C2CF61000AE1979 /* Chain+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Chain+CoreDataProperties.m"; sourceTree = "<group>"; };
-		9ADC87BE1C2CF61000AE1979 /* Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chain.h; sourceTree = "<group>"; };
-		9ADC87BF1C2CF61000AE1979 /* Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chain.m; sourceTree = "<group>"; };
-		9ADC87C21C2CF67800AE1979 /* Link+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Link+CoreDataProperties.h"; sourceTree = "<group>"; };
-		9ADC87C31C2CF67800AE1979 /* Link+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Link+CoreDataProperties.m"; sourceTree = "<group>"; };
-		9ADC87C41C2CF67800AE1979 /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
-		9ADC87C51C2CF67800AE1979 /* Link.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Link.m; sourceTree = "<group>"; };
 		9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainViewController.swift; sourceTree = "<group>"; };
 		9AEA2EA81C13D3E30075654E /* ChainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainView.swift; sourceTree = "<group>"; };
 		9AEA2EAC1C151D220075654E /* LinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
@@ -90,14 +86,6 @@
 		9A307CAC1C17E6A80009EC9B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9ADC87C21C2CF67800AE1979 /* Link+CoreDataProperties.h */,
-				9ADC87C31C2CF67800AE1979 /* Link+CoreDataProperties.m */,
-				9ADC87C41C2CF67800AE1979 /* Link.h */,
-				9ADC87C51C2CF67800AE1979 /* Link.m */,
-				9ADC87BC1C2CF61000AE1979 /* Chain+CoreDataProperties.h */,
-				9ADC87BD1C2CF61000AE1979 /* Chain+CoreDataProperties.m */,
-				9ADC87BE1C2CF61000AE1979 /* Chain.h */,
-				9ADC87BF1C2CF61000AE1979 /* Chain.m */,
 				9AEA2EAC1C151D220075654E /* LinkModel.swift */,
 				9AEA2EAE1C1538920075654E /* ChainModel.swift */,
 			);
@@ -107,6 +95,10 @@
 		9AA6BF9E1C025FAA000F42F4 = {
 			isa = PBXGroup;
 			children = (
+				9AB691A61C2DF7F40073FE11 /* Chain+CoreDataProperties.swift */,
+				9AB691A71C2DF7F40073FE11 /* Chain.swift */,
+				9AB691A81C2DF7F40073FE11 /* Link+CoreDataProperties.swift */,
+				9AB691A91C2DF7F40073FE11 /* Link.swift */,
 				9AA6BFA91C025FAB000F42F4 /* Chainlink */,
 				9AA6BFA81C025FAB000F42F4 /* Products */,
 			);
@@ -217,23 +209,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */,
-				9ADC87C71C2CF67800AE1979 /* Link.m in Sources */,
-				9ADC87C61C2CF67800AE1979 /* Link+CoreDataProperties.m in Sources */,
 				9A307CAB1C17E5A30009EC9B /* ChainModelStore.swift in Sources */,
 				9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */,
 				9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */,
 				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,
 				9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */,
+				9AB691AB1C2DF7F40073FE11 /* Chain.swift in Sources */,
 				9ADC87BB1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld in Sources */,
 				9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */,
+				9AB691AC1C2DF7F40073FE11 /* Link+CoreDataProperties.swift in Sources */,
 				9A1F690C1C273136001F1C21 /* SwipeCounterView.swift in Sources */,
-				9ADC87C01C2CF61000AE1979 /* Chain+CoreDataProperties.m in Sources */,
 				9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */,
 				9A307CB01C180B4F0009EC9B /* AllChainsView.swift in Sources */,
 				9A7BF8311C247C8E00A23DC6 /* ChainViewCell.swift in Sources */,
 				9AF1D2741C26492B001ACB77 /* Frequency.swift in Sources */,
+				9AB691AD1C2DF7F40073FE11 /* Link.swift in Sources */,
+				9AB691AA1C2DF7F40073FE11 /* Chain+CoreDataProperties.swift in Sources */,
 				9A307CAE1C17E6F10009EC9B /* AllChainsViewController.swift in Sources */,
-				9ADC87C11C2CF61000AE1979 /* Chain.m in Sources */,
 				9AEA2EAF1C1538920075654E /* ChainModel.swift in Sources */,
 				9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */,
 				9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */,

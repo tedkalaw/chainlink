@@ -16,6 +16,7 @@ class LinkModel: NSObject, NSCoding {
   init(date: NSDate) {
     self.date = date
     super.init();
+
   }
 
   required init?(coder aDecoder: NSCoder) {

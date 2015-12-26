@@ -24,11 +24,6 @@ class AllChainsViewController: UIViewController,
     self.chains = []
     self.managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
-    do {
-      self.chains = try self.managedObjectContext.executeFetchRequest(Chain.allSortedFetchRequest()) as! [Chain]
-    } catch {
-      NSLog("fetching was broke b")
-    }
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
 
@@ -61,7 +56,7 @@ class AllChainsViewController: UIViewController,
       title: "Add",
       style: .Plain,
       target: self,
-      action: "addChain"
+      action: "addChainAlert"
     )
   }
 
@@ -81,6 +76,7 @@ class AllChainsViewController: UIViewController,
     // have a DB
     self.chainModelStore = ChainModelStore.loadStore()
     self.chainModelDictionary = self.chainModelStore!.getChainMap()
+    self.chains = self.getChains()
     self.allChainsView?.reloadData()
   }
 
@@ -101,7 +97,7 @@ class AllChainsViewController: UIViewController,
     tableView.separatorInset = UIEdgeInsetsZero
   }
 
-  func addChain() -> Void {
+  func addChainAlert() -> Void {
     let alert = UIAlertController(title: "New Chain",
       message: "Add a new chain",
       preferredStyle: .Alert)
@@ -147,6 +143,18 @@ class AllChainsViewController: UIViewController,
   private func getChain(indexPath: NSIndexPath) -> ChainModel {
     let chainTitles:Array<String> = self.chainModelStore!.chainsTitles()
     return self.chainModelDictionary[chainTitles[indexPath.row]]!
+  }
+
+  private func getChains() -> [Chain] {
+    var chains = [Chain]()
+    do {
+      chains = try self.managedObjectContext.executeFetchRequest(Chain.allSortedFetchRequest()) as! [Chain]
+    } catch {
+      // TODO: Add better logging
+      NSLog("getting chains failed")
+    }
+
+    return chains
   }
 
   func handleAddLink(chain:ChainModel) -> ChainModel {

@@ -14,7 +14,10 @@ import CoreData
 
 extension Chain {
 
-    @NSManaged var name: String?
-    @NSManaged var links: NSOrderedSet?
+  @NSManaged var name: String?
+  @NSManaged var links: NSOrderedSet?
+  
+  @NSManaged func addLinksObject(link: Link)
+  @NSManaged func removeLinksObject(link: Link)
 
 }

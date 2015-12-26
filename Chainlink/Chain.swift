@@ -26,4 +26,13 @@ class Chain: NSManagedObject {
 
     return fetchRequest
   }
+
+  /**
+   Adds a like that has a date/time for right now. Intended to be used for
+   */
+  func addLinkForNow() -> Void {
+    let newLink = Link()
+    newLink.time = NSDate()
+    self.addLinksObject(newLink)
+  }
 }

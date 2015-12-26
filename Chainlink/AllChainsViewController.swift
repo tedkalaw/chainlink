@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AllChainsViewController: UIViewController,
   UITableViewDataSource,
@@ -16,6 +17,28 @@ class AllChainsViewController: UIViewController,
   var allChainsView: AllChainsView?
   var chainModelStore: ChainModelStore?
   var chainModelDictionary: Dictionary<String, ChainModel> = Dictionary<String, ChainModel>()
+  var managedObjectContext: NSManagedObjectContext
+  var chains: [Chain]
+
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    self.chains = []
+    self.managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+
+    do {
+      self.chains = try self.managedObjectContext.executeFetchRequest(Chain.allSortedFetchRequest()) as! [Chain]
+    } catch {
+      NSLog("fetching was broke b")
+    }
+    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
+  }
+
+  convenience init() {
+    self.init(nibName: nil, bundle: nil)
+  }
 
   override func viewDidLoad() -> Void {
     super.viewDidLoad()
@@ -86,8 +109,22 @@ class AllChainsViewController: UIViewController,
     let saveAction = UIAlertAction(title: "Save",
       style: .Default,
       handler: { (action:UIAlertAction) -> Void in
-        self.chainModelStore!.newChain(alert.textFields!.first!.text!);
+        let newChainName = alert.textFields!.first!.text!
+        self.chainModelStore!.newChain(newChainName)
         self.chainModelDictionary = ChainModelStore.chainMap()
+
+        let newChain = NSEntityDescription.insertNewObjectForEntityForName(
+          Chain.entityName(),
+          inManagedObjectContext: self.managedObjectContext
+        ) as! Chain
+        newChain.name = newChainName
+
+        do {
+          try self.managedObjectContext.save()
+        } catch {
+          NSLog("ayy lmao")
+        }
+
         self.allChainsView?.reloadData()
     })
     alert.addAction(saveAction)

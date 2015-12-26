@@ -12,6 +12,18 @@ import CoreData
 
 class Chain: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+  static func entityName() -> String {
+    return "Chain"
+  }
 
+  static func allFetchRequest() -> NSFetchRequest {
+    return NSFetchRequest(entityName: self.entityName())
+  }
+
+  static func allSortedFetchRequest() -> NSFetchRequest {
+    let fetchRequest = self.allFetchRequest()
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+
+    return fetchRequest
+  }
 }

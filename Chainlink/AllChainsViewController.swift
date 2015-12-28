@@ -71,6 +71,9 @@ class AllChainsViewController: UIViewController,
 
   override func viewWillAppear(animated: Bool) {
     self.chains = self.getChains()
+
+    // TODO: is there a more graceful way to do this? Perhaps have this controller register
+    // to listen to changes to the chain that's edited?
     self.allChainsView?.reloadData()
   }
 
@@ -159,10 +162,10 @@ class AllChainsViewController: UIViewController,
   }
 
   func handleSelectChainEdit(chain: Chain) -> Void {
-//    self.navigationController?.pushViewController(
-//      ChainEditViewController(chain: chain),
-//      animated: true
-//    )
+    self.navigationController?.pushViewController(
+      ChainEditViewController(chain: chain),
+      animated: true
+    )
   }
 
 }

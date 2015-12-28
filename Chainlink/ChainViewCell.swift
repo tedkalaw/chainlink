@@ -152,7 +152,7 @@ class ChainViewCell: UITableViewCell {
 
   func handleTapOptions(recognizer: UITapGestureRecognizer) {
     self.closeRightView()
-//    self.delegate?.handleSelectChainEdit(self.chain!)
+    self.delegate?.handleSelectChainEdit(self.chain!)
   }
 
   override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {

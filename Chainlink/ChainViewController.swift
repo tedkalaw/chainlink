@@ -95,7 +95,12 @@ class ChainViewController:UIViewController,
     let cell = tableView.dequeueReusableCellWithIdentifier("cell",
       forIndexPath: indexPath) 
     let item = self.links![indexPath.row]
-    cell.textLabel?.text = String(item.time)
+
+    let formatter = NSDateFormatter()
+    formatter.dateStyle = .ShortStyle
+    formatter.timeStyle = .ShortStyle
+
+    cell.textLabel?.text = formatter.stringFromDate(item.time!)
     return cell
   }
 }

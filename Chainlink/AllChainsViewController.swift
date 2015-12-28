@@ -15,8 +15,6 @@ class AllChainsViewController: UIViewController,
   ChainViewCellDelegate {
 
   var allChainsView: AllChainsView?
-  var chainModelStore: ChainModelStore?
-  var chainModelDictionary: Dictionary<String, ChainModel> = Dictionary<String, ChainModel>()
   var managedObjectContext: NSManagedObjectContext
   var chains: [Chain]
 
@@ -72,10 +70,6 @@ class AllChainsViewController: UIViewController,
   }
 
   override func viewWillAppear(animated: Bool) {
-    // TODO: Remove the need to have a ref to the store? Will be nice to 
-    // have a DB
-    self.chainModelStore = ChainModelStore.loadStore()
-    self.chainModelDictionary = self.chainModelStore!.getChainMap()
     self.chains = self.getChains()
     self.allChainsView?.reloadData()
   }
@@ -106,8 +100,6 @@ class AllChainsViewController: UIViewController,
       style: .Default,
       handler: { (action:UIAlertAction) -> Void in
         let newChainName = alert.textFields!.first!.text!
-        self.chainModelStore!.newChain(newChainName)
-        self.chainModelDictionary = ChainModelStore.chainMap()
 
         let newChain = NSEntityDescription.insertNewObjectForEntityForName(
           Chain.entityName(),
@@ -117,8 +109,10 @@ class AllChainsViewController: UIViewController,
 
         do {
           try self.managedObjectContext.save()
+          self.chains = self.getChains()
+          // TODO: do sexy animation that inserts the cell at the right sorted position
         } catch {
-          NSLog("ayy lmao")
+          NSLog("Failed to add new chain")
         }
 
         self.allChainsView?.reloadData()
@@ -137,7 +131,8 @@ class AllChainsViewController: UIViewController,
 
     presentViewController(alert,
       animated: true,
-      completion: nil)
+      completion: nil
+    )
   }
 
   private func getChains() -> [Chain] {
@@ -145,8 +140,7 @@ class AllChainsViewController: UIViewController,
     do {
       chains = try self.managedObjectContext.executeFetchRequest(Chain.allSortedFetchRequest()) as! [Chain]
     } catch {
-      // TODO: Add better logging
-      NSLog("getting chains failed")
+      NSLog("Failed to fetch chains")
     }
 
     return chains
@@ -158,11 +152,17 @@ class AllChainsViewController: UIViewController,
   }
 
   func handleSelectChain(chain: Chain) -> Void {
-    self.navigationController?.pushViewController(ChainViewController(chain: chain), animated: true)
+    self.navigationController?.pushViewController(
+      ChainViewController(chain: chain),
+      animated: true
+    )
   }
 
   func handleSelectChainEdit(chain: ChainModel) -> Void {
-    self.navigationController?.pushViewController(ChainEditViewController(chain: chain), animated: true)
+    self.navigationController?.pushViewController(
+      ChainEditViewController(chain: chain),
+      animated: true
+    )
   }
 
 }

@@ -57,8 +57,13 @@ class ChainViewController:UIViewController,
       return;
     }
 
-    self.chain.removeLinksObject(self.links[indexPath.row])
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+    do {
+      self.chain.removeLinksObject(self.links[indexPath.row])
+      try self.chain.managedObjectContext?.save()
+      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+    } catch {
+      NSLog("Failed to delete link")
+    }
   }
 
   override func viewWillLayoutSubviews() {

@@ -11,7 +11,7 @@ import UIKit
 
 class ChainEditViewController: UIViewController {
   var chainEditView: ChainEditView?
-  var chain: ChainModel?
+  var chain: Chain!
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -21,7 +21,7 @@ class ChainEditViewController: UIViewController {
       fatalError("init(coder:) has not been implemented")
   }
 
-  convenience init(chain: ChainModel) {
+  convenience init(chain: Chain) {
     self.init()
     self.chain = chain
   }
@@ -30,6 +30,6 @@ class ChainEditViewController: UIViewController {
     let v = UIView()
     v.backgroundColor = UIColor.redColor()
     self.view = v
-    self.title = self.chain!.title
+    self.title = self.chain.name
   }
 }

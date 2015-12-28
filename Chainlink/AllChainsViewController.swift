@@ -158,11 +158,11 @@ class AllChainsViewController: UIViewController,
     )
   }
 
-  func handleSelectChainEdit(chain: ChainModel) -> Void {
-    self.navigationController?.pushViewController(
-      ChainEditViewController(chain: chain),
-      animated: true
-    )
+  func handleSelectChainEdit(chain: Chain) -> Void {
+//    self.navigationController?.pushViewController(
+//      ChainEditViewController(chain: chain),
+//      animated: true
+//    )
   }
 
 }

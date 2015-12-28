@@ -18,7 +18,7 @@ enum ActiveView {
 protocol ChainViewCellDelegate {
   func handleAddLink(chain: Chain) -> Chain
   func handleSelectChain(chain: Chain) -> Void
-  func handleSelectChainEdit(chain: ChainModel) -> Void
+  func handleSelectChainEdit(chain: Chain) -> Void
 }
 
 class ChainViewCell: UITableViewCell {

@@ -10,7 +10,6 @@
 		9A1F690C1C273136001F1C21 /* SwipeCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1F690B1C273136001F1C21 /* SwipeCounterView.swift */; };
 		9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E2BC1C0268E7004AB17C /* RootViewController.swift */; };
 		9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E2BE1C0283AD004AB17C /* InitialView.swift */; };
-		9A307CAB1C17E5A30009EC9B /* ChainModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */; };
 		9A307CAE1C17E6F10009EC9B /* AllChainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A307CAD1C17E6F10009EC9B /* AllChainsViewController.swift */; };
 		9A307CB01C180B4F0009EC9B /* AllChainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A307CAF1C180B4F0009EC9B /* AllChainsView.swift */; };
 		9A31E0F01C307D2C00B40351 /* Chain+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A31E0EE1C307D2C00B40351 /* Chain+CoreDataProperties.swift */; };
@@ -28,8 +27,6 @@
 		9ADC87BB1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B91C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld */; };
 		9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */; };
 		9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EA81C13D3E30075654E /* ChainView.swift */; };
-		9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EAC1C151D220075654E /* LinkModel.swift */; };
-		9AEA2EAF1C1538920075654E /* ChainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEA2EAE1C1538920075654E /* ChainModel.swift */; };
 		9AF1D2741C26492B001ACB77 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1D2731C26492B001ACB77 /* Frequency.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +34,6 @@
 		9A1F690B1C273136001F1C21 /* SwipeCounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCounterView.swift; sourceTree = "<group>"; };
 		9A23E2BC1C0268E7004AB17C /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9A23E2BE1C0283AD004AB17C /* InitialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
-		9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainModelStore.swift; sourceTree = "<group>"; };
 		9A307CAD1C17E6F10009EC9B /* AllChainsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChainsViewController.swift; sourceTree = "<group>"; };
 		9A307CAF1C180B4F0009EC9B /* AllChainsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChainsView.swift; sourceTree = "<group>"; };
 		9A31E0EE1C307D2C00B40351 /* Chain+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Chain+CoreDataProperties.swift"; path = "Chainlink/Chain+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -57,8 +53,6 @@
 		9ADC87BA1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChainlinkDataModel.xcdatamodel; sourceTree = "<group>"; };
 		9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainViewController.swift; sourceTree = "<group>"; };
 		9AEA2EA81C13D3E30075654E /* ChainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainView.swift; sourceTree = "<group>"; };
-		9AEA2EAC1C151D220075654E /* LinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
-		9AEA2EAE1C1538920075654E /* ChainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainModel.swift; sourceTree = "<group>"; };
 		9AF1D2731C26492B001ACB77 /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,15 +75,6 @@
 				9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		9A307CAC1C17E6A80009EC9B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				9AEA2EAC1C151D220075654E /* LinkModel.swift */,
-				9AEA2EAE1C1538920075654E /* ChainModel.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		9AA6BF9E1C025FAA000F42F4 = {
@@ -122,7 +107,6 @@
 				9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */,
 				9AA6BFAC1C025FAB000F42F4 /* Chainlink-Prefix.pch */,
 				9ADC87B91C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld */,
-				9A307CAA1C17E5A30009EC9B /* ChainModelStore.swift */,
 				9AEA2EA81C13D3E30075654E /* ChainView.swift */,
 				9A7BF8301C247C8E00A23DC6 /* ChainViewCell.swift */,
 				9AEA2EA61C13D3CD0075654E /* ChainViewController.swift */,
@@ -130,7 +114,6 @@
 				9AA6BFB31C025FAB000F42F4 /* Info.plist */,
 				9A23E2BE1C0283AD004AB17C /* InitialView.swift */,
 				9AA6BFB01C025FAB000F42F4 /* LaunchScreen.storyboard */,
-				9A307CAC1C17E6A80009EC9B /* Models */,
 				9A23E2BC1C0268E7004AB17C /* RootViewController.swift */,
 				9A1F690D1C27313B001F1C21 /* Views */,
 			);
@@ -208,8 +191,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AEA2EAD1C151D220075654E /* LinkModel.swift in Sources */,
-				9A307CAB1C17E5A30009EC9B /* ChainModelStore.swift in Sources */,
 				9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */,
 				9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */,
 				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,
@@ -226,7 +207,6 @@
 				9AB691B11C2E35450073FE11 /* Link.swift in Sources */,
 				9A31E0F11C307D2C00B40351 /* Link+CoreDataProperties.swift in Sources */,
 				9A307CAE1C17E6F10009EC9B /* AllChainsViewController.swift in Sources */,
-				9AEA2EAF1C1538920075654E /* ChainModel.swift in Sources */,
 				9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */,
 				9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */,
 			);

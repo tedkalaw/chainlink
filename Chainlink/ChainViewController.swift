@@ -16,7 +16,7 @@ class ChainViewController:UIViewController,
   var chain: Chain!
   var chainView: ChainView?
   var addButton: UIBarButtonItem?
-  var links: [Link]?
+  var links: [Link]!
 
   override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -57,8 +57,7 @@ class ChainViewController:UIViewController,
       return;
     }
 
-//    self.chainMO!.removeLinksObject(self.chainMO!.links![indexPath.row] as! Link)
-    // TODO: implement delete
+    self.chain.removeLinksObject(self.links[indexPath.row])
     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
   }
 
@@ -74,15 +73,18 @@ class ChainViewController:UIViewController,
   }
 
   func addLink() -> Void {
-    NSLog("adding link")
     self.chain.addLinkForNow()
     do {
       try self.chain.managedObjectContext!.save()
     } catch {
+      NSLog("Failed to save added link")
     }
 
     self.links = chain.getSortedLinks()
-    self.chainView!.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade)
+    self.chainView!.insertRowsAtIndexPaths(
+      [NSIndexPath(forRow: 0, inSection: 0)],
+      withRowAnimation: UITableViewRowAnimation.Fade
+    )
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

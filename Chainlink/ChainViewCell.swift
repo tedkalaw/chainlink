@@ -74,7 +74,10 @@ class ChainViewCell: UITableViewCell {
     let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
     tapRecognizer.delegate = self
 
-    let optionsTapRecognizer = UITapGestureRecognizer(target: self, action: "handleTapOptions:")
+    let optionsTapRecognizer = UITapGestureRecognizer(
+      target: self,
+      action: "handleTapOptions:"
+    )
     optionsTapRecognizer.delegate = self
 
     self.contentView.addSubview(self.optionsView)
@@ -186,7 +189,10 @@ class ChainViewCell: UITableViewCell {
 
     let swipeDistance:CGFloat = frame.size.width / 5.0
     
-    self.myContentView!.center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
+    self.myContentView!.center = CGPointMake(
+      originalCenter.x + translation.x,
+      originalCenter.y
+    )
     // has the user dragged the item far enough
     self.shouldIncrement = self.myContentView!.frame.origin.x > swipeDistance
     
@@ -236,7 +242,10 @@ class ChainViewCell: UITableViewCell {
     let maxSwipeDistance = frame.size.width / 5.0
     let translation = recognizer.translationInView(self)
     if (fabs(translation.x) < maxSwipeDistance) {
-      self.myContentView!.center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
+      self.myContentView!.center = CGPointMake(
+        originalCenter.x + translation.x,
+        originalCenter.y
+      )
     } else {
       self.isRightViewOpen = true
     }
@@ -247,7 +256,11 @@ class ChainViewCell: UITableViewCell {
 
   private func handleSwipeRightWithRightViewOpen(recognizer: UIPanGestureRecognizer) -> Void {
     let translation = recognizer.translationInView(self)
-    self.myContentView!.center = CGPointMake(originalCenter.x + translation.x, originalCenter.y)
+
+    self.myContentView!.center = CGPointMake(
+      originalCenter.x + translation.x,
+      originalCenter.y
+    )
   }
 
   private func handleSwipeRightEndedWithRightViewOpen() -> Void {

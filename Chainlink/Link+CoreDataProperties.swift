@@ -2,7 +2,7 @@
 //  Link+CoreDataProperties.swift
 //  Chainlink
 //
-//  Created by Ted Kalaw on 12/25/15.
+//  Created by Ted Kalaw on 12/27/15.
 //  Copyright © 2015 Ted Kalaw. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

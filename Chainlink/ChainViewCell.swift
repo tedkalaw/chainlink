@@ -17,17 +17,17 @@ enum ActiveView {
 
 protocol ChainViewCellDelegate {
   func handleAddLink(chain:ChainModel) -> ChainModel
-  func handleSelectChain(chain:ChainModel) -> Void
+  func handleSelectChain(chain:Chain) -> Void
   func handleSelectChainEdit(chain:ChainModel) -> Void
 }
 
 class ChainViewCell: UITableViewCell {
 
-  var chain:ChainModel? {
+  var chainMO: Chain? {
     didSet {
-      self.chainTitleLabel?.text = chain!.title
-      self.linkCountLabel?.text = String(chain!.links.count)
-      self.counterView.totalForPeriod = chain!.links.count
+      self.chainTitleLabel?.text = chainMO!.name
+      self.linkCountLabel?.text = String(chainMO!.links!.count)
+      self.counterView.totalForPeriod = chainMO!.links!.count
       self.layoutIfNeeded()
     }
   }
@@ -143,13 +143,13 @@ class ChainViewCell: UITableViewCell {
     if (self.isRightViewOpen) {
       self.closeRightView()
     } else {
-      self.delegate?.handleSelectChain(self.chain!)
+      self.delegate?.handleSelectChain(self.chainMO!)
     }
   }
 
   func handleTapOptions(recognizer: UITapGestureRecognizer) {
     self.closeRightView()
-    self.delegate?.handleSelectChainEdit(self.chain!)
+//    self.delegate?.handleSelectChainEdit(self.chain!)
   }
 
   override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -171,7 +171,7 @@ class ChainViewCell: UITableViewCell {
   }
 
   private func addLink() -> Void {
-    self.chain = self.delegate?.handleAddLink(self.chain!)
+//    self.chain = self.delegate?.handleAddLink(self.chain!)
   }
 
   /**
@@ -191,9 +191,9 @@ class ChainViewCell: UITableViewCell {
     self.shouldIncrement = self.myContentView!.frame.origin.x > swipeDistance
     
     if (self.shouldIncrement) {
-      self.counterView.totalForPeriod = self.chain!.links.count + 1
+      self.counterView.totalForPeriod = self.chainMO!.links!.count + 1
     } else {
-      self.counterView.totalForPeriod = self.chain!.links.count
+      self.counterView.totalForPeriod = self.chainMO!.links!.count
     }
     
     // TODO: Refactor this

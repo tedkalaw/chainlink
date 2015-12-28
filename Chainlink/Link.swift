@@ -10,8 +10,11 @@ import Foundation
 import CoreData
 
 
-class Link: Chain {
+class Link: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 
+  static func entityName() -> String {
+    return "Link"
+  }
 }

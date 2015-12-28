@@ -81,13 +81,13 @@ class AllChainsViewController: UIViewController,
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.chainModelDictionary.keys.count
+    return self.chains.count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell",
       forIndexPath: indexPath) as! ChainViewCell
-    cell.chain = self.getChain(indexPath)
+    cell.chainMO = self.chains[indexPath.row]
     cell.delegate = self
     return cell
   }
@@ -140,11 +140,6 @@ class AllChainsViewController: UIViewController,
       completion: nil)
   }
 
-  private func getChain(indexPath: NSIndexPath) -> ChainModel {
-    let chainTitles:Array<String> = self.chainModelStore!.chainsTitles()
-    return self.chainModelDictionary[chainTitles[indexPath.row]]!
-  }
-
   private func getChains() -> [Chain] {
     var chains = [Chain]()
     do {
@@ -162,8 +157,8 @@ class AllChainsViewController: UIViewController,
     return chain;
   }
 
-  func handleSelectChain(chain: ChainModel) -> Void {
-    self.navigationController?.pushViewController(ChainViewController(chainTitle: chain.title), animated: true)
+  func handleSelectChain(chain: Chain) -> Void {
+    self.navigationController?.pushViewController(ChainViewController(chain: chain), animated: true)
   }
 
   func handleSelectChainEdit(chain: ChainModel) -> Void {

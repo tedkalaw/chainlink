@@ -15,11 +15,12 @@ import CoreData
 extension Chain {
 
   @NSManaged var name: String?
+  @NSManaged var consecutiveLinks: NSNumber?
   @NSManaged var links: NSSet?
 
   @NSManaged func addLinksObject(link: Link)
   @NSManaged func removeLinksObject(link: Link)
-  @NSManaged func addLinks(links: NSSet)
-  @NSManaged func removeLinks(links: NSSet)
+  @NSManaged func addEmployees(links: NSSet)
+  @NSManaged func removeEmployees(links: NSSet)
 
 }

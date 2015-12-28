@@ -70,4 +70,9 @@ class Chain: NSManagedObject {
 
     return sortedLinks
   }
+
+  func getConsecutiveLinkCount() -> Int {
+    return 0
+  }
+
 }

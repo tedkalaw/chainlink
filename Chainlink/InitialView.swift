@@ -83,7 +83,7 @@ class InitialView: UIView {
     dateFormatter.locale = locale
     dateFormatter.dateFormat = "MM-dd-yyyy"
 
-    return dateFormatter.dateFromString("12-13-2015")!
+    return dateFormatter.dateFromString("12-13-2016")!
   }
 
   private func getDaysTilBirthday() -> Int {

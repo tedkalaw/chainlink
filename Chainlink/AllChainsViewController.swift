@@ -81,7 +81,7 @@ class AllChainsViewController: UIViewController,
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell",
       forIndexPath: indexPath) as! ChainViewCell
-    cell.chainMO = self.chains[indexPath.row]
+    cell.chain = self.chains[indexPath.row]
     cell.delegate = self
     return cell
   }
@@ -146,7 +146,7 @@ class AllChainsViewController: UIViewController,
     return chains
   }
 
-  func handleAddLink(chain:ChainModel) -> ChainModel {
+  func handleAddLink(chain: Chain) -> Chain {
     chain.addLinkForNow()
     return chain;
   }

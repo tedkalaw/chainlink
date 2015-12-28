@@ -28,9 +28,10 @@ class Chain: NSManagedObject {
   }
 
   /**
-   Adds a like that has a date/time for right now. Intended to be used for
+   Adds a link that has a date/time for right now. Throws an exception if saving
+   fails for some reason
    */
-  func addLinkForNow() -> Void {
+  func addLinkForNowX() throws -> Void {
     let newLink = NSEntityDescription.insertNewObjectForEntityForName(
       Link.entityName(),
       inManagedObjectContext: self.managedObjectContext!
@@ -38,6 +39,15 @@ class Chain: NSManagedObject {
     newLink.time = NSDate()
 
     self.addLinksObject(newLink)
+    try self.managedObjectContext!.save()
+  }
+
+  func addLinkForNow() -> Void {
+    do {
+      try self.addLinkForNowX()
+    } catch {
+      NSLog("Failed to add link")
+    }
   }
 
   /**

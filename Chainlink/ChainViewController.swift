@@ -79,11 +79,6 @@ class ChainViewController:UIViewController,
 
   func addLink() -> Void {
     self.chain.addLinkForNow()
-    do {
-      try self.chain.managedObjectContext!.save()
-    } catch {
-      NSLog("Failed to save added link")
-    }
 
     self.links = chain.getSortedLinks()
     self.chainView!.insertRowsAtIndexPaths(

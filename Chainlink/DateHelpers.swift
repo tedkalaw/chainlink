@@ -9,6 +9,9 @@
 import Foundation
 
 class DateHelpers {
+  /**
+   @returns today's date at midnight
+  */
   static func getTodaysDay() -> NSDate {
     let dateFormatter = NSDateFormatter()
     dateFormatter.timeStyle = .NoStyle
@@ -19,6 +22,9 @@ class DateHelpers {
     )!
   }
 
+  /**
+   @returns tomorrow's date at midnight
+  */
   static func getTomorrowsDay() -> NSDate {
     return NSCalendar.currentCalendar().dateByAddingUnit(
       .Day,
@@ -28,6 +34,9 @@ class DateHelpers {
     )!
   }
 
+  /**
+   @returns yesterday's date at midnight
+  */
   static func getYesterdaysDay() -> NSDate {
     return NSCalendar.currentCalendar().dateByAddingUnit(
       .Day,

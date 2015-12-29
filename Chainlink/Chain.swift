@@ -51,16 +51,21 @@ class Chain: NSManagedObject {
     }
   }
 
+  private func getBaseLinkFetchRequest() -> NSFetchRequest {
+    let fetchRequest = NSFetchRequest(entityName: Link.entityName())
+    fetchRequest.sortDescriptors = [
+      NSSortDescriptor(key: "time", ascending: false)
+    ]
+
+    return fetchRequest
+  }
+
   /**
    Returns links sorted by date
    */
   func getSortedLinks() -> [Link] {
-    let fetchRequest = NSFetchRequest(entityName: Link.entityName())
+    let fetchRequest = self.getBaseLinkFetchRequest()
     fetchRequest.predicate = NSPredicate(format: "chain == %@", self)
-
-    fetchRequest.sortDescriptors = [
-      NSSortDescriptor(key: "time", ascending: false)
-    ]
 
     var sortedLinks = [Link]()
     do {
@@ -72,17 +77,16 @@ class Chain: NSManagedObject {
     return sortedLinks
   }
 
+  /**
+   @returns all the links that occurred between yesterday at midnight and tomorrow at midnight; i.e., today's links
+   */
   func getTodaysLinks() -> [Link] {
-    let fetchRequest = NSFetchRequest(entityName: Link.entityName())
+    let fetchRequest = self.getBaseLinkFetchRequest()
     fetchRequest.predicate = NSPredicate(
       format: "chain == %@ AND time BETWEEN %@",
       self,
-      []
+      [DateHelpers.getYesterdaysDay(), DateHelpers.getTomorrowsDay()]
     )
-
-    fetchRequest.sortDescriptors = [
-      NSSortDescriptor(key: "time", ascending: false)
-    ]
 
     var sortedLinks = [Link]()
     do {

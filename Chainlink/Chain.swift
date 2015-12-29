@@ -39,6 +39,7 @@ class Chain: NSManagedObject {
     newLink.time = NSDate()
 
     self.addLinksObject(newLink)
+    self.addToConsecutiveLinkCount()
     try self.managedObjectContext!.save()
   }
 
@@ -71,8 +72,33 @@ class Chain: NSManagedObject {
     return sortedLinks
   }
 
-  func getConsecutiveLinkCount() -> Int {
-    return 0
+  func getTodaysLinks() -> [Link] {
+    let fetchRequest = NSFetchRequest(entityName: Link.entityName())
+    fetchRequest.predicate = NSPredicate(
+      format: "chain == %@ AND time BETWEEN %@",
+      self,
+      []
+    )
+
+    fetchRequest.sortDescriptors = [
+      NSSortDescriptor(key: "time", ascending: false)
+    ]
+
+    var sortedLinks = [Link]()
+    do {
+      sortedLinks = try self.managedObjectContext?.executeFetchRequest(fetchRequest) as! [Link]
+    } catch {
+      NSLog("getting sorted links failed")
+    }
+
+    return sortedLinks
   }
 
+  func getConsecutiveLinkCount() -> Int {
+    return (self.consecutiveLinks?.integerValue)!
+  }
+
+  func addToConsecutiveLinkCount() -> Void {
+    // TODO: Add in logic to
+  }
 }

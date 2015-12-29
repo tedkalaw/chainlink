@@ -83,9 +83,10 @@ class Chain: NSManagedObject {
   func getTodaysLinks() -> [Link] {
     let fetchRequest = self.getBaseLinkFetchRequest()
     fetchRequest.predicate = NSPredicate(
-      format: "chain == %@ AND time BETWEEN %@",
+      format: "chain == %@ AND time < %@ AND time > %@",
       self,
-      [DateHelpers.getYesterdaysDay(), DateHelpers.getTomorrowsDay()]
+      DateHelpers.getTomorrowsDay(),
+      DateHelpers.getTodaysDay()
     )
 
     var sortedLinks = [Link]()

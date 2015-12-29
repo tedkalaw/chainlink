@@ -26,11 +26,14 @@ class ChainViewCell: UITableViewCell {
   var chain: Chain? {
     didSet {
       self.chainTitleLabel?.text = chain!.name
-      self.linkCountLabel?.text = String(chain!.links!.count)
-      self.counterView.totalForPeriod = chain!.links!.count
+      self.links = chain!.getTodaysLinks()
+      self.linkCountLabel?.text = String(self.links.count)
+      self.counterView.totalForPeriod = self.links.count
       self.layoutIfNeeded()
     }
   }
+
+  var links: [Link]
 
   var chainTitleLabel:UILabel?
   var linkCountLabel:UILabel?
@@ -51,6 +54,7 @@ class ChainViewCell: UITableViewCell {
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     self.activeView = .None
+    self.links = []
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
     self.separatorInset = UIEdgeInsetsZero
@@ -197,9 +201,9 @@ class ChainViewCell: UITableViewCell {
     self.shouldIncrement = self.myContentView!.frame.origin.x > swipeDistance
     
     if (self.shouldIncrement) {
-      self.counterView.totalForPeriod = self.chain!.links!.count + 1
+      self.counterView.totalForPeriod = self.links.count + 1
     } else {
-      self.counterView.totalForPeriod = self.chain!.links!.count
+      self.counterView.totalForPeriod = self.links.count
     }
     
     // TODO: Refactor this

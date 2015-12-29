@@ -9,6 +9,9 @@
 import Foundation
 import CoreData
 
+protocol LinkTarget {
+
+}
 
 class Target: NSManagedObject {
 

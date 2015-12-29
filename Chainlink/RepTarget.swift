@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class RepTarget: NSManagedObject {
+class RepTarget: NSManagedObject, LinkTarget {
 
 // Insert code here to add functionality to your managed object subclass
 

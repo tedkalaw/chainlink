@@ -14,6 +14,6 @@ import CoreData
 
 extension Target {
 
-    @NSManaged var link: Link?
+    @NSManaged var chain: Chain?
 
 }

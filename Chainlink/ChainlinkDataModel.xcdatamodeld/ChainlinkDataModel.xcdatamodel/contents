@@ -4,22 +4,22 @@
         <attribute name="consecutiveLinks" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="links" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Link" inverseName="chain" inverseEntity="Link" syncable="YES"/>
+        <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Target" inverseName="chain" inverseEntity="Target" syncable="YES"/>
     </entity>
     <entity name="Link" representedClassName=".Link" syncable="YES">
         <attribute name="reps" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="time" attributeType="Date" syncable="YES"/>
         <relationship name="chain" maxCount="1" deletionRule="Nullify" destinationEntity="Chain" inverseName="links" inverseEntity="Chain" syncable="YES"/>
-        <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Target" inverseName="link" inverseEntity="Target" syncable="YES"/>
     </entity>
     <entity name="RepTarget" representedClassName=".RepTarget" parentEntity="Target" syncable="YES">
         <attribute name="reps" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="Target" representedClassName=".Target" isAbstract="YES" syncable="YES">
-        <relationship name="link" maxCount="1" deletionRule="Nullify" destinationEntity="Link" inverseName="target" inverseEntity="Link" syncable="YES"/>
+        <relationship name="chain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chain" inverseName="target" inverseEntity="Chain" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Chain" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Link" positionX="-443" positionY="-18" width="128" height="105"/>
+        <element name="Chain" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Link" positionX="-443" positionY="-18" width="128" height="90"/>
         <element name="Target" positionX="-252" positionY="9" width="128" height="60"/>
         <element name="RepTarget" positionX="-243" positionY="18" width="128" height="60"/>
     </elements>

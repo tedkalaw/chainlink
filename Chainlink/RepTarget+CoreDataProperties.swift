@@ -1,5 +1,5 @@
 //
-//  Link+CoreDataProperties.swift
+//  RepTarget+CoreDataProperties.swift
 //  Chainlink
 //
 //  Created by Ted Kalaw on 12/28/15.
@@ -12,10 +12,8 @@
 import Foundation
 import CoreData
 
-extension Link {
+extension RepTarget {
 
-    @NSManaged var time: NSDate?
-    @NSManaged var chain: Chain?
-    @NSManaged var target: Target?
+    @NSManaged var reps: NSNumber?
 
 }

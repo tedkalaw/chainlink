@@ -104,6 +104,19 @@ class Chain: NSManagedObject {
   }
 
   func addToConsecutiveLinkCount() -> Void {
-    // TODO: Add in logic to
+    let todaysLinks: [Link] = self.getTodaysLinks()
+    if (todaysLinks.count >= self.getLinksToDo()) {
+      return
+    }
+
+    self.consecutiveLinks = self.consecutiveLinks != nil
+      ? self.consecutiveLinks!.integerValue + 1
+      : 1
   }
+
+  func getLinksToDo() -> Int {
+    // TODO: Make it so this is configurable
+    return 1
+  }
+
 }

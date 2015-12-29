@@ -29,6 +29,7 @@ class ChainViewCell: UITableViewCell {
       self.links = chain!.getTodaysLinks()
       self.linkCountLabel?.text = String(self.links.count)
       self.counterView.totalForPeriod = self.links.count
+      self.counterView.goalNumber = chain!.getLinksToDo()
       self.layoutIfNeeded()
     }
   }

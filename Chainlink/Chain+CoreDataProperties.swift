@@ -20,6 +20,7 @@ extension Chain {
   @NSManaged var name: String?
   @NSManaged var consecutiveLinks: NSNumber?
   @NSManaged var links: NSSet?
+  @NSManaged var target: Target?
 
   @NSManaged func addLinksObject(link: Link)
   @NSManaged func removeLinksObject(link: Link)

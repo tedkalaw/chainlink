@@ -15,6 +15,7 @@ import CoreData
 extension Link {
 
     @NSManaged var time: NSDate?
+    @NSManaged var reps: NSNumber?
     @NSManaged var chain: Chain?
     @NSManaged var target: Target?
 

@@ -63,6 +63,10 @@ class ChainEditViewController: UITableViewController {
       break
 
       case "Frequency":
+        self.navigationController?.pushViewController(
+          ChainFrequencyEditViewController(chain: self.chain),
+          animated: true
+        )
       break
 
     default:

@@ -29,6 +29,7 @@
 		9AC161071C3374BB001E7BD3 /* ChainEditViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC161061C3374BB001E7BD3 /* ChainEditViewCell.swift */; };
 		9AC161091C3392D9001E7BD3 /* ChainNameEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC161081C3392D9001E7BD3 /* ChainNameEditViewController.swift */; };
 		9AC1610B1C339575001E7BD3 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1610A1C339575001E7BD3 /* TextTableViewCell.swift */; };
+		9AC1610D1C339FC3001E7BD3 /* ChainFrequencyEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1610C1C339FC3001E7BD3 /* ChainFrequencyEditViewController.swift */; };
 		9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */; };
 		9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */; };
 		9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */; };
@@ -63,6 +64,7 @@
 		9AC161061C3374BB001E7BD3 /* ChainEditViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditViewCell.swift; sourceTree = "<group>"; };
 		9AC161081C3392D9001E7BD3 /* ChainNameEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainNameEditViewController.swift; sourceTree = "<group>"; };
 		9AC1610A1C339575001E7BD3 /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		9AC1610C1C339FC3001E7BD3 /* ChainFrequencyEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainFrequencyEditViewController.swift; sourceTree = "<group>"; };
 		9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptionView.swift; sourceTree = "<group>"; };
 		9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditViewController.swift; sourceTree = "<group>"; };
 		9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				9AC161061C3374BB001E7BD3 /* ChainEditViewCell.swift */,
 				9AC161081C3392D9001E7BD3 /* ChainNameEditViewController.swift */,
 				9AC1610A1C339575001E7BD3 /* TextTableViewCell.swift */,
+				9AC1610C1C339FC3001E7BD3 /* ChainFrequencyEditViewController.swift */,
 			);
 			path = Chainlink;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */,
 				9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */,
+				9AC1610D1C339FC3001E7BD3 /* ChainFrequencyEditViewController.swift in Sources */,
 				9ABC6B181C324B4D0025986E /* RepTarget+CoreDataProperties.swift in Sources */,
 				9ABC6B191C324B4D0025986E /* RepTarget.swift in Sources */,
 				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,

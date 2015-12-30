@@ -26,6 +26,9 @@
 		9ABC6B191C324B4D0025986E /* RepTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC6B151C324B4D0025986E /* RepTarget.swift */; };
 		9ABC6B1A1C324B4D0025986E /* Target+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC6B161C324B4D0025986E /* Target+CoreDataProperties.swift */; };
 		9ABC6B1B1C324B4D0025986E /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC6B171C324B4D0025986E /* Target.swift */; };
+		9AC161071C3374BB001E7BD3 /* ChainEditViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC161061C3374BB001E7BD3 /* ChainEditViewCell.swift */; };
+		9AC161091C3392D9001E7BD3 /* ChainNameEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC161081C3392D9001E7BD3 /* ChainNameEditViewController.swift */; };
+		9AC1610B1C339575001E7BD3 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1610A1C339575001E7BD3 /* TextTableViewCell.swift */; };
 		9ADC87B41C2B142300AE1979 /* SwipeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */; };
 		9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */; };
 		9ADC87B81C2BA60400AE1979 /* ChainEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */; };
@@ -57,6 +60,9 @@
 		9ABC6B151C324B4D0025986E /* RepTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepTarget.swift; path = Chainlink/RepTarget.swift; sourceTree = "<group>"; };
 		9ABC6B161C324B4D0025986E /* Target+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Target+CoreDataProperties.swift"; path = "Chainlink/Target+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9ABC6B171C324B4D0025986E /* Target.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Target.swift; path = Chainlink/Target.swift; sourceTree = "<group>"; };
+		9AC161061C3374BB001E7BD3 /* ChainEditViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditViewCell.swift; sourceTree = "<group>"; };
+		9AC161081C3392D9001E7BD3 /* ChainNameEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainNameEditViewController.swift; sourceTree = "<group>"; };
+		9AC1610A1C339575001E7BD3 /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		9ADC87B31C2B142300AE1979 /* SwipeOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptionView.swift; sourceTree = "<group>"; };
 		9ADC87B51C2BA5A400AE1979 /* ChainEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditViewController.swift; sourceTree = "<group>"; };
 		9ADC87B71C2BA60400AE1979 /* ChainEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainEditView.swift; sourceTree = "<group>"; };
@@ -131,6 +137,9 @@
 				9A23E2BC1C0268E7004AB17C /* RootViewController.swift */,
 				9A1F690D1C27313B001F1C21 /* Views */,
 				9ABC6B121C3235C90025986E /* DateHelpers.swift */,
+				9AC161061C3374BB001E7BD3 /* ChainEditViewCell.swift */,
+				9AC161081C3392D9001E7BD3 /* ChainNameEditViewController.swift */,
+				9AC1610A1C339575001E7BD3 /* TextTableViewCell.swift */,
 			);
 			path = Chainlink;
 			sourceTree = "<group>";
@@ -211,10 +220,12 @@
 				9ABC6B181C324B4D0025986E /* RepTarget+CoreDataProperties.swift in Sources */,
 				9ABC6B191C324B4D0025986E /* RepTarget.swift in Sources */,
 				9A23E2BF1C0283AD004AB17C /* InitialView.swift in Sources */,
+				9AC161091C3392D9001E7BD3 /* ChainNameEditViewController.swift in Sources */,
 				9A23E2BD1C0268E7004AB17C /* RootViewController.swift in Sources */,
 				9AB691AB1C2DF7F40073FE11 /* Chain.swift in Sources */,
 				9ABC6B1B1C324B4D0025986E /* Target.swift in Sources */,
 				9ADC87BB1C2CCCD300AE1979 /* ChainlinkDataModel.xcdatamodeld in Sources */,
+				9AC1610B1C339575001E7BD3 /* TextTableViewCell.swift in Sources */,
 				9AEA2EA71C13D3CD0075654E /* ChainViewController.swift in Sources */,
 				9A1F690C1C273136001F1C21 /* SwipeCounterView.swift in Sources */,
 				9AEA2EA91C13D3E30075654E /* ChainView.swift in Sources */,
@@ -228,6 +239,7 @@
 				9ABC6B131C3235C90025986E /* DateHelpers.swift in Sources */,
 				9A307CAE1C17E6F10009EC9B /* AllChainsViewController.swift in Sources */,
 				9AA6BFAB1C025FAB000F42F4 /* AppDelegate.swift in Sources */,
+				9AC161071C3374BB001E7BD3 /* ChainEditViewCell.swift in Sources */,
 				9ADC87B61C2BA5A400AE1979 /* ChainEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

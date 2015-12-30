@@ -1,21 +1,18 @@
 //
-//  ChainEditViewController.swift
+//  ChainNameEditViewController.swift
 //  Chainlink
 //
-//  Created by Ted Kalaw on 12/23/15.
+//  Created by Ted Kalaw on 12/29/15.
 //  Copyright © 2015 Ted Kalaw. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class ChainEditViewController: UITableViewController {
+class ChainNameEditViewController: UITableViewController {
   var chain: Chain!
 
-  var editOptions: [String]
-
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-    self.editOptions = ["Name", "Frequency"]
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
 
@@ -33,40 +30,20 @@ class ChainEditViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.editOptions.count
+    return 1
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-    cell.textLabel?.text = self.editOptions[indexPath.row]
-    cell.detailTextLabel?.text = self.chain.name
+    cell.textLabel?.text = "Name"
     return cell
   }
 
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let text = self.editOptions[indexPath.row]
-    switch (text) {
-      case "Name":
-        self.navigationController?.pushViewController(
-          ChainNameEditViewController(chain: self.chain),
-          animated: true
-        )
-      break
-
-      case "Frequency":
-      break
-
-    default:
-      return
-    }
-  }
-
   override func viewDidLoad() {
-    self.title = chain.name
+    self.title = "Name"
     super.viewDidLoad()
     self.tableView = UITableView(frame: self.view.frame, style: .Grouped)
-    self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    self.tableView.registerClass(TextTableViewCell.self, forCellReuseIdentifier: "cell")
   }
 
 }

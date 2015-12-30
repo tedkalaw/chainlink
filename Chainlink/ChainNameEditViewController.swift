@@ -11,6 +11,7 @@ import UIKit
 
 class ChainNameEditViewController: UITableViewController {
   var chain: Chain!
+  var textCell: TextTableViewCell!
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -34,8 +35,9 @@ class ChainNameEditViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-    cell.textLabel?.text = "Name"
+    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TextTableViewCell
+    cell.label.text = chain.name
+    self.textCell = cell
     return cell
   }
 
@@ -44,6 +46,17 @@ class ChainNameEditViewController: UITableViewController {
     super.viewDidLoad()
     self.tableView = UITableView(frame: self.view.frame, style: .Grouped)
     self.tableView.registerClass(TextTableViewCell.self, forCellReuseIdentifier: "cell")
+  }
+
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    self.chain.name = self.textCell.label.text
+
+    do {
+      try self.chain.managedObjectContext!.save()
+    } catch {
+      NSLog("Failed to update chain name")
+    }
   }
 
 }

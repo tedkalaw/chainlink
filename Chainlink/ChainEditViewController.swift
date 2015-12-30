@@ -44,6 +44,14 @@ class ChainEditViewController: UITableViewController {
     return cell
   }
 
+  override func viewDidAppear(animated: Bool) {
+    self.tableView.reloadData()
+  }
+
+  override func viewWillAppear(animated: Bool) {
+    self.title = self.chain.name
+  }
+
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let text = self.editOptions[indexPath.row]
     switch (text) {
@@ -63,7 +71,6 @@ class ChainEditViewController: UITableViewController {
   }
 
   override func viewDidLoad() {
-    self.title = chain.name
     super.viewDidLoad()
     self.tableView = UITableView(frame: self.view.frame, style: .Grouped)
     self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")

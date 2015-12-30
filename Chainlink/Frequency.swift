@@ -8,6 +8,7 @@
 
 import Foundation
 
-enum Frequency: String {
-  case DAILY = "daily"
+enum Frequency: Int {
+  case DAILY = 0
+  case WEEKLY = 1
 }

@@ -21,6 +21,7 @@ class TextTableViewCell: UITableViewCell, UITextFieldDelegate {
     label.textColor = UIColor.blackColor()
     label.font = UIFont.systemFontOfSize(16)
     label.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
+    label.clearButtonMode = .WhileEditing
     self.label = label
 
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -38,5 +39,11 @@ class TextTableViewCell: UITableViewCell, UITextFieldDelegate {
       width: bounds.size.width - leftMarginForLabel,
       height: bounds.size.height
     )
+  }
+
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    // So that hitting return makes the keyboard go away
+    textField.resignFirstResponder()
+    return false
   }
 }

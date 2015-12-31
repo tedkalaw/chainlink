@@ -14,6 +14,8 @@ class ChainFrequencyEditViewController: UITableViewController {
 
   var selectedRow: Int!
 
+  // TODO use bitmap to do all this stuff so I can store the bitmap
+  // in the db 8)
   let frequencyOptions: [Frequency] = [Frequency.DAILY, Frequency.WEEKLY]
   var dayOptions: [String: Bool] = ["Sunday": false, "Monday": false, "Tuesday": false, "Wednesday": false, "Thursday": false, "Friday": false, "Saturday": false]
 

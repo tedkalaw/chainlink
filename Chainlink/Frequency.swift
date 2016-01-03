@@ -43,6 +43,4 @@ class Frequency: NSObject {
   func isOff() -> Bool {
     return self.intValue == 0
   }
-
-
 }

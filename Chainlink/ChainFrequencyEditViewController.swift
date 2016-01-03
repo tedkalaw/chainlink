@@ -84,11 +84,9 @@ class ChainFrequencyEditViewController: UITableViewController {
 
     do {
       self.chain.frequency = self.frequency.intValue
-      NSLog("disappearing")
-      NSLog("%d", self.frequency.intValue)
       try self.chain.managedObjectContext!.save()
     } catch {
-      NSLog("Failed to update chain name")
+      NSLog("Failed to update frequency")
     }
   }
 

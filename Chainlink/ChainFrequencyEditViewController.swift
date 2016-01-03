@@ -11,15 +11,11 @@ import UIKit
 
 class ChainFrequencyEditViewController: UITableViewController {
   var chain: Chain!
+  var frequency: Frequency!
 
   var selectedRow: Int!
 
-  // TODO use bitmap to do all this stuff so I can store the bitmap
-  // in the db 8)
-  var dayOptions: [String: Bool] = ["Sunday": false, "Monday": false, "Tuesday": false, "Wednesday": false, "Thursday": false, "Friday": false, "Saturday": false]
-
-  // TODO: figure out swift map syntax
-  static var days: [String] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  static var days: [DayOfTheWeek] = [DayOfTheWeek.SUNDAY, DayOfTheWeek.MONDAY, DayOfTheWeek.TUESDAY, DayOfTheWeek.WEDNESDAY, DayOfTheWeek.THURSDAY, DayOfTheWeek.FRIDAY, DayOfTheWeek.SATURDAY]
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -32,6 +28,7 @@ class ChainFrequencyEditViewController: UITableViewController {
   convenience init(chain: Chain) {
     self.init(nibName: nil, bundle: nil)
     self.chain = chain
+    self.frequency = Frequency(intValue: Int((chain.frequency!.intValue)))
   }
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -39,31 +36,40 @@ class ChainFrequencyEditViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return ChainFrequencyEditViewController.days.count
+    return 7
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
-    cell.textLabel?.text = ChainFrequencyEditViewController.days[indexPath.row]
+    let day = ChainFrequencyEditViewController.days[indexPath.row]
+    cell.textLabel?.text = ChainFrequencyEditViewController.getPrettyString(day)
+
+    let selectedDay = ChainFrequencyEditViewController.days[indexPath.row]
+    let isSelected = self.frequency.isDayOfTheWeekSet(selectedDay)
+    if (isSelected) {
+      cell.accessoryType = .Checkmark
+    } else {
+      cell.accessoryType = .None
+    }
     return cell
   }
 
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
     let selectedDay = ChainFrequencyEditViewController.days[indexPath.row]
-    let isSelected = self.dayOptions[selectedDay]!
-
-
-    self.dayOptions[selectedDay] = !isSelected
+    let isSelected = self.frequency.isDayOfTheWeekSet(selectedDay)
 
     self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     let selectedCell = self.tableView.cellForRowAtIndexPath(indexPath)
     if (isSelected) {
       selectedCell!.accessoryType = .None
+      self.frequency.unsetDayOfTheWeek(selectedDay)
     } else {
       selectedCell!.accessoryType = .Checkmark
+      self.frequency.setDayOfTheWeek(selectedDay)
     }
+
   }
 
   override func viewDidLoad() {
@@ -77,9 +83,31 @@ class ChainFrequencyEditViewController: UITableViewController {
     super.viewWillDisappear(animated)
 
     do {
+      self.chain.frequency = self.frequency.intValue
+      NSLog("disappearing")
+      NSLog("%d", self.frequency.intValue)
       try self.chain.managedObjectContext!.save()
     } catch {
       NSLog("Failed to update chain name")
+    }
+  }
+
+  static func getPrettyString(dayOfTheWeek: DayOfTheWeek) -> String {
+    switch (dayOfTheWeek) {
+    case DayOfTheWeek.SUNDAY:
+      return "Sunday"
+    case DayOfTheWeek.MONDAY:
+      return "Monday"
+    case DayOfTheWeek.TUESDAY:
+      return "Tuesday"
+    case DayOfTheWeek.WEDNESDAY:
+      return "Wednesday"
+    case DayOfTheWeek.THURSDAY:
+      return "Thursday"
+    case DayOfTheWeek.FRIDAY:
+      return "Friday"
+    case DayOfTheWeek.SATURDAY:
+      return "Saturday"
     }
   }
 

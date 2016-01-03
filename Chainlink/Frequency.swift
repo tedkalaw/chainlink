@@ -28,6 +28,10 @@ class Frequency: NSObject {
     self.intValue |= dayOfTheWeek.rawValue
   }
 
+  func unsetDayOfTheWeek(dayOfTheWeek: DayOfTheWeek) -> Void {
+    self.intValue ^= dayOfTheWeek.rawValue
+  }
+
   func isDayOfTheWeekSet(dayOfTheWeek: DayOfTheWeek) -> Bool {
     return Bool(self.intValue & dayOfTheWeek.rawValue)
   }
@@ -39,4 +43,6 @@ class Frequency: NSObject {
   func isOff() -> Bool {
     return self.intValue == 0
   }
+
+
 }

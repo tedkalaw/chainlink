@@ -101,7 +101,6 @@ class ChainEditViewController: UITableViewController {
           animated: true,
           completion: nil
         )
-        // TODO add
       break
 
     default:

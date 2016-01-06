@@ -15,7 +15,7 @@ class ChainEditViewController: UITableViewController {
   var editOptions: [String]
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-    self.editOptions = ["Name", "Frequency"]
+    self.editOptions = ["Name", "Frequency", "Delete"]
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
 
@@ -38,8 +38,16 @@ class ChainEditViewController: UITableViewController {
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    let editOption = self.editOptions[indexPath.row]
+
     cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-    cell.textLabel?.text = self.editOptions[indexPath.row]
+    cell.textLabel?.text = editOption
+
+    if (editOption == "Delete") {
+      cell.backgroundColor = UIColor.redColor()
+      cell.textLabel?.textColor = UIColor.whiteColor()
+      cell.accessoryType = .None
+    }
     cell.detailTextLabel?.text = self.chain.name
     return cell
   }
@@ -67,6 +75,33 @@ class ChainEditViewController: UITableViewController {
           ChainFrequencyEditViewController(chain: self.chain),
           animated: true
         )
+      break
+
+      case "Delete":
+        let alert = UIAlertController(
+          title: "Delete chain",
+          message: "Are you sure you want to permanently delete this chain?",
+          preferredStyle: .Alert
+        )
+
+        let deleteAction = UIAlertAction(
+          title: "Yes dude",
+          style: .Destructive,
+          handler: {
+            (action:UIAlertAction) -> Void in
+            self.chain.managedObjectContext!.deleteObject(self.chain)
+            self.navigationController?.popViewControllerAnimated(true)
+          }
+        )
+
+        alert.addAction(deleteAction)
+
+        presentViewController(
+          alert,
+          animated: true,
+          completion: nil
+        )
+        // TODO add
       break
 
     default:
